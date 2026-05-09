@@ -9,6 +9,12 @@ __pycache__/
 *.pyd
 .pytest_cache/
 
+# Virtual environments (Windows and Linux/WSL — never commit these)
+.venv310/
+.venv310-linux/
+.venv/
+venv/
+
 # ROS/catkin
 build/
 devel/
