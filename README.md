@@ -363,6 +363,14 @@ It publishes alert events on:
 ```text
 /alarm/state
 ```
+Alarm state values currently used by `alarm_node.py`:
+
+```text
+ALARM_OFF
+WARNING
+HIGH_ALARM_ON
+```
+
 
 ---
 
@@ -522,7 +530,7 @@ cd ros1-child-safety-monitoring
 Run this outside Docker:
 
 ```bash
-python3 -m pip install --user "numpy==1.26.4" "opencv-python==4.10.0.84"
+python3 -m pip install --user "numpy==1.24.4" "opencv-python==4.8.1.78"
 python3 src/child_safety_monitoring/scripts/host_webcam_streamer.py --camera 0 --port 8090
 ```
 
@@ -646,7 +654,7 @@ cd ros1-child-safety-monitoring
 Run outside Docker in PowerShell:
 
 ```powershell
-py -3 -m pip install --user "numpy==1.26.4" "opencv-python==4.10.0.84"
+py -3 -m pip install --user "numpy==1.24.4" "opencv-python==4.8.1.78"
 py -3 src\child_safety_monitoring\scripts\host_webcam_streamer.py --camera 0 --port 8090
 ```
 
@@ -755,7 +763,7 @@ cd ros1-child-safety-monitoring
 Start laptop webcam streamer outside Docker:
 
 ```bash
-python3 -m pip install --user "numpy==1.26.4" "opencv-python==4.10.0.84"
+python3 -m pip install --user "numpy==1.24.4" "opencv-python==4.8.1.78"
 python3 src/child_safety_monitoring/scripts/host_webcam_streamer.py --camera 0 --port 8090
 ```
 
@@ -909,6 +917,8 @@ Common examples might be:
 ```
 
 Use the real topic from the robot.
+
+Important: the camera topic must be a raw `sensor_msgs/Image` topic. If the robot only provides a compressed image topic such as `/camera/image_raw/compressed`, republish it to a raw image topic first.
 
 ## Step 5: run robot demo
 
@@ -1202,12 +1212,14 @@ yolo11n-pose.pt
 
 It is the smaller/faster pose model.
 
+Note: the first run may download `yolo11n-pose.pt` if the model file is not already present. Internet access is needed for that first download, or you can copy the model file onto the robot manually.
+
 ### NumPy / cv_bridge problems
 
 Use pinned versions:
 
 ```bash
-python3 -m pip install --user "numpy==1.26.4" "opencv-python==4.10.0.84"
+python3 -m pip install --user "numpy==1.24.4" "opencv-python==4.8.1.78"
 ```
 
 ---
