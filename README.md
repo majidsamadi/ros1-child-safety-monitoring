@@ -1354,3 +1354,76 @@ camera image
 ```
 
 During the week, teammates can develop on their own laptops using Docker. On Saturdays, the same project can run directly on the Jupiter robot using its ROS camera topic.
+
+---
+
+## Environment Setup Quick Reference
+
+### Python version
+
+Use **Python 3.10.x** for the laptop webcam streamer virtual environment.
+Do **not** use Python 3.14. PyTorch, OpenCV, Ultralytics, and ROS Noetic bindings are not reliable on Python 3.14 for this project.
+
+For the Jupiter robot, use the robot's normal ROS Noetic Python environment, which is usually **Python 3.8** on Ubuntu 20.04.
+
+### Host webcam venv
+
+macOS/Linux:
+
+```bash
+./scripts/setup_host_venv.sh
+source .venv310/bin/activate
+python scripts/host_webcam_streamer.py --camera 0 --port 8090
+```
+
+Windows PowerShell:
+
+```powershell
+.\scripts\setup_host_venv_windows.ps1
+.\.venv310\Scripts\python.exe scripts\host_webcam_streamer.py --camera 0 --port 8090
+```
+
+Windows CMD:
+
+```bat
+scripts\setup_host_venv_windows.bat
+.venv310\Scripts\python.exe scripts\host_webcam_streamer.py --camera 0 --port 8090
+```
+
+### ROS 1 dependencies and build
+
+On Jupiter robot or inside ROS Noetic Docker:
+
+```bash
+./scripts/setup_ros1_python_deps.sh
+./scripts/build_ros1_workspace.sh
+source devel/setup.bash
+```
+
+### Laptop Docker mode
+
+Start Docker from repo root:
+
+```bash
+./scripts/run_ros1_docker_dev.sh
+```
+
+Inside Docker:
+
+```bash
+bash scripts/docker_setup_ros1_workspace.sh
+bash scripts/run_laptop_stream_demo.sh
+```
+
+### Robot mode
+
+On Jupiter robot:
+
+```bash
+source /opt/ros/noetic/setup.bash
+catkin_make
+source devel/setup.bash
+rostopic list | grep -i image
+./scripts/run_robot_demo.sh /YOUR/CAMERA/TOPIC
+```
+

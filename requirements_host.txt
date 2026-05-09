@@ -1,0 +1,4 @@
+# Host/laptop webcam streamer dependencies.
+# Use Python 3.10.x for this file. Do not use Python 3.14.
+numpy==1.26.4
+opencv-python==4.10.0.84
