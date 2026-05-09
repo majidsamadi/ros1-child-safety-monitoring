@@ -1,0 +1,12 @@
+std_msgs/Header header
+string smaller_track_id
+string larger_track_id
+float32 torso_distance_norm
+float32 wrap_score
+float32 lift_score
+float32 feet_off_ground_score
+float32 limb_speed_score
+float32 limb_accel_score
+float32 co_motion_score
+float32 suspicion_score
+string state

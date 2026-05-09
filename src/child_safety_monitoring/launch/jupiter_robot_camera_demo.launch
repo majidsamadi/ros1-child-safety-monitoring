@@ -1,0 +1,21 @@
+<launch>
+  <arg name="camera_topic" default="/usb_cam/image_raw" />
+  <arg name="pose_model" default="yolo11n-pose.pt" />
+
+  <node pkg="child_safety_monitoring" type="pose_estimator_node.py" name="pose_estimator_node" output="screen">
+    <param name="image_topic" value="$(arg camera_topic)" />
+    <param name="raw_pose_topic" value="/poses/raw" />
+    <param name="annotated_image_topic" value="/camera/pose_overlay" />
+    <param name="model_path" value="$(arg pose_model)" />
+    <param name="device" value="cpu" />
+    <param name="confidence_threshold" value="0.35" />
+    <param name="keypoint_confidence_threshold" value="0.25" />
+    <param name="publish_annotated" value="true" />
+  </node>
+
+  <node pkg="child_safety_monitoring" type="tracker_node.py" name="tracker_node" output="screen" />
+  <node pkg="child_safety_monitoring" type="interaction_analyzer_node.py" name="interaction_analyzer_node" output="screen" />
+  <node pkg="child_safety_monitoring" type="decision_node.py" name="decision_node" output="screen" />
+  <node pkg="child_safety_monitoring" type="alert_console_node.py" name="alert_console_node" output="screen" />
+  <node pkg="child_safety_monitoring" type="alarm_node.py" name="alarm_node" output="screen" />
+</launch>

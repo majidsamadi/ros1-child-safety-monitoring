@@ -1,0 +1,39 @@
+# ROS / catkin build outputs
+build/
+devel/
+install/
+log/
+.catkin_tools/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.pytest_cache/
+.venv/
+venv/
+
+# macOS
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+
+# Runtime data and generated files
+data/videos/*
+data/rosbags/*
+data/debug_clips/*
+!data/videos/.gitkeep
+!data/rosbags/.gitkeep
+!data/debug_clips/.gitkeep
+
+# Model files downloaded during runtime
+*.pt
+*.onnx
+*.engine
+
+# Secrets: never commit camera usernames/passwords
+.env
+*.env

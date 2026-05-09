@@ -1,0 +1,15 @@
+<launch>
+  <arg name="stream_url" default="0" />
+  <arg name="pose_model" default="yolo11n-pose.pt" />
+
+  <node pkg="child_safety_monitoring" type="cctv_stream_node.py" name="cctv_stream_node" output="screen">
+    <param name="stream_url" value="$(arg stream_url)" />
+    <param name="image_topic" value="/camera/image_raw" />
+    <param name="camera_frame_id" value="stream_camera" />
+  </node>
+
+  <include file="$(find child_safety_monitoring)/launch/jupiter_robot_camera_demo.launch">
+    <arg name="camera_topic" value="/camera/image_raw" />
+    <arg name="pose_model" value="$(arg pose_model)" />
+  </include>
+</launch>

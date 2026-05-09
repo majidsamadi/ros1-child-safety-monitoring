@@ -1,0 +1,6 @@
+<launch>
+  <node pkg="child_safety_monitoring" type="scenario_simulator_node.py" name="scenario_simulator_node" output="screen" />
+  <node pkg="child_safety_monitoring" type="decision_node.py" name="decision_node" output="screen" />
+  <node pkg="child_safety_monitoring" type="alert_console_node.py" name="alert_console_node" output="screen" />
+  <node pkg="child_safety_monitoring" type="alarm_node.py" name="alarm_node" output="screen" />
+</launch>

@@ -1,0 +1,14 @@
+std_msgs/Header header
+time event_start
+time current_time
+string level
+string explanation
+float32 suspicion_score
+int32 smaller_roi_x
+int32 smaller_roi_y
+int32 smaller_roi_width
+int32 smaller_roi_height
+int32 larger_roi_x
+int32 larger_roi_y
+int32 larger_roi_width
+int32 larger_roi_height

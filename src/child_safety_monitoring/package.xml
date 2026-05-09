@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>child_safety_monitoring</name>
+  <version>0.1.0</version>
+  <description>ROS 1 child safety monitoring prototype using pose estimation and rule-based interaction analysis.</description>
+  <maintainer email="student@example.com">Student Team</maintainer>
+  <license>MIT</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>rospy</build_depend>
+  <build_depend>std_msgs</build_depend>
+  <build_depend>sensor_msgs</build_depend>
+  <build_depend>geometry_msgs</build_depend>
+  <build_depend>cv_bridge</build_depend>
+  <build_depend>child_safety_msgs</build_depend>
+
+  <exec_depend>rospy</exec_depend>
+  <exec_depend>std_msgs</exec_depend>
+  <exec_depend>sensor_msgs</exec_depend>
+  <exec_depend>geometry_msgs</exec_depend>
+  <exec_depend>cv_bridge</exec_depend>
+  <exec_depend>child_safety_msgs</exec_depend>
+</package>

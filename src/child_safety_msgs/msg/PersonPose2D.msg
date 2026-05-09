@@ -1,0 +1,12 @@
+std_msgs/Header header
+string track_id
+string size_role
+float32 size_confidence
+int32 bbox_x
+int32 bbox_y
+int32 bbox_width
+int32 bbox_height
+geometry_msgs/Point32[] keypoints_xy
+float32[] keypoint_confidence
+bool[] visible
+float32 center_depth_m
