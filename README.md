@@ -505,9 +505,15 @@ Use this mode for MacBook development when the robot is not available.
 Install:
 
 - Git
-- Python 3
+- Python **3.10** (required — ML libraries do not support 3.11+ yet)
 - Docker Desktop
 - VS Code or Terminal
+
+Install Python 3.10 with Homebrew if not already installed:
+
+```bash
+brew install python@3.10
+```
 
 If macOS blocks camera access in normal Terminal, run the webcam streamer from **VS Code Terminal** and allow camera access for VS Code in:
 
@@ -525,13 +531,25 @@ git clone https://github.com/majidsamadi/ros1-child-safety-monitoring.git
 cd ros1-child-safety-monitoring
 ```
 
-## Step 2: start laptop webcam streamer
+## Step 2: set up the host virtual environment
 
-Run this outside Docker:
+Run this **once** from the repo root:
 
 ```bash
-python3 -m pip install --user "numpy==1.24.4" "opencv-python==4.8.1.78"
-python3 src/child_safety_monitoring/scripts/host_webcam_streamer.py --camera 0 --port 8090
+bash setup_venv.sh
+```
+
+This creates `.venv310/` with Python 3.10 and installs `requirements_host.txt` (numpy + opencv).
+
+> **Why a virtual environment?** ML libraries used in this project (OpenCV, NumPy, PyTorch, Ultralytics) do not support Python 3.11+ yet. The venv pins Python 3.10 and keeps packages isolated from your system Python.
+
+## Step 3: start laptop webcam streamer
+
+Activate the venv and run the streamer:
+
+```bash
+source .venv310/bin/activate
+python src/child_safety_monitoring/scripts/host_webcam_streamer.py --camera 0 --port 8090
 ```
 
 Keep this terminal open.
@@ -547,10 +565,10 @@ You should see your webcam.
 If camera `0` does not work:
 
 ```bash
-python3 src/child_safety_monitoring/scripts/host_webcam_streamer.py --camera 1 --port 8090
+python src/child_safety_monitoring/scripts/host_webcam_streamer.py --camera 1 --port 8090
 ```
 
-## Step 3: start ROS 1 Docker container
+## Step 4: start ROS 1 Docker container
 
 Open another terminal:
 
@@ -633,9 +651,15 @@ Use this mode for the Windows teammate.
 Install:
 
 - Git for Windows
-- Python 3
+- Python **3.10** (required — ML libraries do not support 3.11+ yet)
 - Docker Desktop
 - WSL 2 backend enabled in Docker Desktop
+
+Install Python 3.10 if not already installed — open **PowerShell as Administrator**:
+
+```powershell
+winget install --id Python.Python.3.10 --exact
+```
 
 ## Step 1: clone the repo
 
@@ -649,13 +673,31 @@ git clone https://github.com/majidsamadi/ros1-child-safety-monitoring.git
 cd ros1-child-safety-monitoring
 ```
 
-## Step 2: start laptop webcam streamer
+## Step 2: set up the host virtual environment
 
-Run outside Docker in PowerShell:
+Run this **once** from the repo root in PowerShell:
 
 ```powershell
-py -3 -m pip install --user "numpy==1.24.4" "opencv-python==4.8.1.78"
-py -3 src\child_safety_monitoring\scripts\host_webcam_streamer.py --camera 0 --port 8090
+.\setup_venv.ps1
+```
+
+This creates `.venv310\` with Python 3.10 and installs `requirements_host.txt` (numpy + opencv).
+
+> **Why a virtual environment?** ML libraries used in this project (OpenCV, NumPy, PyTorch, Ultralytics) do not support Python 3.11+ yet. The venv pins Python 3.10 and keeps packages isolated from your system Python.
+
+If PowerShell blocks the script, run this first:
+
+```powershell
+Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
+```
+
+## Step 3: start laptop webcam streamer
+
+Activate the venv and run the streamer:
+
+```powershell
+.\.venv310\Scripts\Activate.ps1
+python src\child_safety_monitoring\scripts\host_webcam_streamer.py --camera 0 --port 8090
 ```
 
 Keep this terminal open.
@@ -669,10 +711,10 @@ http://127.0.0.1:8090/video
 If camera `0` does not work:
 
 ```powershell
-py -3 src\child_safety_monitoring\scripts\host_webcam_streamer.py --camera 1 --port 8090
+python src\child_safety_monitoring\scripts\host_webcam_streamer.py --camera 1 --port 8090
 ```
 
-## Step 3: start Docker
+## Step 4: start Docker
 
 Open another PowerShell terminal:
 
@@ -750,6 +792,12 @@ Linux users can run either with Docker or native ROS 1 Noetic.
 
 ## Option A: Linux with Docker
 
+Install Python 3.10 if not already available:
+
+```bash
+sudo apt install python3.10 python3.10-venv
+```
+
 Clone:
 
 ```bash
@@ -760,11 +808,17 @@ git clone https://github.com/majidsamadi/ros1-child-safety-monitoring.git
 cd ros1-child-safety-monitoring
 ```
 
+Set up the host virtual environment (run **once**):
+
+```bash
+bash setup_venv.sh
+```
+
 Start laptop webcam streamer outside Docker:
 
 ```bash
-python3 -m pip install --user "numpy==1.24.4" "opencv-python==4.8.1.78"
-python3 src/child_safety_monitoring/scripts/host_webcam_streamer.py --camera 0 --port 8090
+source .venv310/bin/activate
+python src/child_safety_monitoring/scripts/host_webcam_streamer.py --camera 0 --port 8090
 ```
 
 Check browser:
@@ -838,7 +892,8 @@ source devel/setup.bash
 Then use either a camera stream:
 
 ```bash
-python3 src/child_safety_monitoring/scripts/host_webcam_streamer.py --camera 0 --port 8090
+source .venv310/bin/activate
+python src/child_safety_monitoring/scripts/host_webcam_streamer.py --camera 0 --port 8090
 ```
 
 and:

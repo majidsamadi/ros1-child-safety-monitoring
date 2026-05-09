@@ -1,0 +1,9 @@
+# Host-side requirements (runs OUTSIDE Docker on your laptop).
+# Only needed for host_webcam_streamer.py and local development tools.
+# The full ML stack (torch, ultralytics) runs inside Docker.
+#
+# Requires Python 3.10.x — run setup_venv.ps1 (Windows) or setup_venv.sh (macOS/Linux)
+# to create a compatible virtual environment automatically.
+
+numpy==1.24.4
+opencv-python==4.8.1.78
