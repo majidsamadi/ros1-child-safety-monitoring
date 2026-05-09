@@ -1,7 +1,9 @@
-# ROS Noetic usually runs on Ubuntu 20.04 / Python 3.8.
+# ROS Noetic runs on Ubuntu 20.04 / Python 3.8.
 # Keep NumPy below 2.0 for cv_bridge compatibility.
 # Torch CPU wheels avoid installing very large CUDA packages in Docker/robot setups.
+# typing-extensions must be pinned <4.13 — versions 4.13+ require Python 3.9+.
 --extra-index-url https://download.pytorch.org/whl/cpu
+typing-extensions==4.12.2
 numpy==1.24.4
 opencv-python==4.8.1.78
 torch==2.2.2+cpu

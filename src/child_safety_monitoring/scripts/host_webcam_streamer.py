@@ -22,8 +22,15 @@ class Handler(BaseHTTPRequestHandler):
             if latest_jpeg is None:
                 time.sleep(0.05); continue
             try:
-                self.wfile.write(b'--frame\r\nContent-Type: image/jpeg\r\n\r\n')
-                self.wfile.write(latest_jpeg)
+                frame_data = latest_jpeg
+                header = (
+                    b'--frame\r\n'
+                    b'Content-Type: image/jpeg\r\n'
+                    b'Content-Length: ' + str(len(frame_data)).encode() + b'\r\n'
+                    b'\r\n'
+                )
+                self.wfile.write(header)
+                self.wfile.write(frame_data)
                 self.wfile.write(b'\r\n')
                 time.sleep(0.03)
             except Exception:
