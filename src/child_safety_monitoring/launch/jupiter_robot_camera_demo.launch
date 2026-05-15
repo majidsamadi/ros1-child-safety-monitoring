@@ -15,6 +15,13 @@
 
   <node pkg="child_safety_monitoring" type="tracker_node.py" name="tracker_node" output="screen" />
   <node pkg="child_safety_monitoring" type="interaction_analyzer_node.py" name="interaction_analyzer_node" output="screen" />
+
+  <node pkg="child_safety_monitoring" type="violence_detector_node.py" name="violence_detector_node" output="screen">
+    <param name="image_topic" value="$(arg camera_topic)" />
+    <param name="frame_skip" value="5" />
+    <param name="device" value="cpu" />
+  </node>
+
   <node pkg="child_safety_monitoring" type="decision_node.py" name="decision_node" output="screen">
     <rosparam file="$(find child_safety_monitoring)/config/detection_params.yaml" command="load" />
   </node>
