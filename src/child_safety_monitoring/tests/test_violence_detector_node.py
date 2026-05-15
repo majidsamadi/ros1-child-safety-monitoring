@@ -161,6 +161,15 @@ class TestViolenceDetectorNode(unittest.TestCase):
         node.pub.publish.assert_not_called()
         _rospy.logwarn.assert_called()
 
+    def test_logwarn_when_violence_label_missing(self):
+        """logwarn must fire if id2label contains no 'violence' entry."""
+        _rospy.logwarn.reset_mock()
+        _mock_model_instance.config.id2label = {0: 'non-violence', 1: 'other'}
+        node = _build_node()
+        self.assertEqual(node.violence_idx, 0)
+        _rospy.logwarn.assert_called_once()
+        _mock_model_instance.config.id2label = {0: 'non-violence', 1: 'violence'}
+
 
 if __name__ == '__main__':
     unittest.main()
