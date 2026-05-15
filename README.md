@@ -591,21 +591,11 @@ Inside Docker:
 
 ```bash
 cd /root/catkin_ws
-source /opt/ros/noetic/setup.bash
-
-apt update
-apt install -y \
-  python3-pip \
-  python3-opencv \
-  ros-noetic-cv-bridge \
-  ros-noetic-image-transport \
-  ros-noetic-web-video-server
-
-python3 -m pip install -r src/child_safety_monitoring/requirements_ros1.txt
-
-catkin_make
+bash setup_ros_deps.sh
 source devel/setup.bash
 ```
+
+> Re-run `bash setup_ros_deps.sh` after any `git pull` that adds new packages.
 
 ## Step 5: run laptop camera demo
 
@@ -737,21 +727,11 @@ Inside Docker:
 
 ```bash
 cd /root/catkin_ws
-source /opt/ros/noetic/setup.bash
-
-apt update
-apt install -y \
-  python3-pip \
-  python3-opencv \
-  ros-noetic-cv-bridge \
-  ros-noetic-image-transport \
-  ros-noetic-web-video-server
-
-python3 -m pip install -r src/child_safety_monitoring/requirements_ros1.txt
-
-catkin_make
+bash setup_ros_deps.sh
 source devel/setup.bash
 ```
+
+> Re-run `bash setup_ros_deps.sh` after any `git pull` that adds new packages.
 
 ## Step 5: run laptop camera demo
 
@@ -873,19 +853,7 @@ cd ~/Robotics
 git clone https://github.com/majidsamadi/ros1-child-safety-monitoring.git
 cd ros1-child-safety-monitoring
 
-source /opt/ros/noetic/setup.bash
-
-sudo apt update
-sudo apt install -y \
-  python3-pip \
-  python3-opencv \
-  ros-noetic-cv-bridge \
-  ros-noetic-image-transport \
-  ros-noetic-web-video-server
-
-python3 -m pip install --user -r src/child_safety_monitoring/requirements_ros1.txt
-
-catkin_make
+bash setup_ros_deps.sh
 source devel/setup.bash
 ```
 
@@ -929,28 +897,22 @@ cd ~/ros1-child-safety-monitoring
 git pull
 ```
 
-## Step 2: install dependencies on the robot
+## Step 2: install dependencies and build
 
-```bash
-sudo apt update
-sudo apt install -y \
-  python3-pip \
-  python3-opencv \
-  ros-noetic-cv-bridge \
-  ros-noetic-image-transport \
-  ros-noetic-web-video-server
-
-python3 -m pip install --user -r src/child_safety_monitoring/requirements_ros1.txt
-```
-
-## Step 3: build
+Run the setup script **once** from the repo root (handles apt packages, Python packages, and catkin build in one step):
 
 ```bash
 cd ~/ros1-child-safety-monitoring
-source /opt/ros/noetic/setup.bash
-catkin_make
-source devel/setup.bash
+bash setup_ros_deps.sh
 ```
+
+After any `git pull` that adds new Python packages, run it again — it is safe to re-run.
+
+> **What the script does:**
+> 1. Sources ROS Noetic
+> 2. Installs apt packages (cv-bridge, image-transport, web-video-server)
+> 3. Installs all Python packages from `requirements_ros1.txt` (torch, ultralytics, transformers, etc.)
+> 4. Runs `catkin_make` and sources `devel/setup.bash`
 
 ## Step 4: start robot camera
 
