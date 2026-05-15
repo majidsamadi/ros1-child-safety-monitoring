@@ -3,6 +3,7 @@
 > **Branch:** `violence-detection`
 > **Model:** [`jaranohaal/vit-base-violence-detection`](https://huggingface.co/jaranohaal/vit-base-violence-detection)
 > **Added:** 2026-05-15
+> **Last verified:** 2026-05-16 (live test on Docker, vit_score ~0.43 calm scene ✅)
 
 ---
 
@@ -96,8 +97,11 @@ roslaunch child_safety_monitoring stream_demo.launch \
 **Expected startup logs:**
 ```
 [INFO] Loading ViT model: jaranohaal/vit-base-violence-detection (device=cpu)
-[INFO] ViT model loaded. violence_idx=1 (found=True)
+[WARN] Label "violence" not found in id2label {0: 'LABEL_0', 1: 'LABEL_1'}; defaulting to index 1 (set ~violence_idx param to override)
+[INFO] ViT model loaded. violence_idx=1 (found=False)
 ```
+
+> **Note on `found=False`:** The model's `id2label` uses generic labels (`LABEL_0`, `LABEL_1`) rather than named ones. This is normal — the node automatically defaults to class index 1 (violence), which matches the model card. The `"TRAIN this model"` warning from transformers is also cosmetic; the model is already fine-tuned and works for inference.
 
 ---
 
@@ -109,11 +113,20 @@ rostopic echo /violence/vit_score
 ```
 Expected: `Float32` values between 0.0 and 1.0, appearing roughly once per second.
 
+**Observed values (live test, calm scene):** ~0.428–0.430 — low violence confidence, as expected.
+Values above 0.5 indicate the model sees potential violence in the frame.
+
 ### Check fused score in suspicion events
 ```bash
 rostopic echo /suspicion_event
 ```
 Expected: `explanation` field contains `vit_score=0.XX` when an alert fires.
+
+> ⏳ **TODO (test later):** Trigger suspicion by performing fast/aggressive movement in front of the camera, then confirm:
+> ```bash
+> rostopic echo /suspicion_event | grep vit_score
+> ```
+> Should output something like: `explanation: "... vit_score=0.71 ..."`
 
 ---
 
@@ -224,6 +237,34 @@ Bold = nodes or topics added/modified in this integration.
 
 ---
 
+## Known Issues & Runtime Fixes
+
+### `violence_idx` defaults to 0 (wrong class)
+
+**Symptom:** Log shows `defaulting to index 0` — scores are inverted (high score for non-violence).
+
+**Cause:** Stale `.pyc` bytecode cache. Python runs the old compiled version despite the source being updated.
+
+**Fix (inside container):**
+```bash
+find /ros1_ws/src/ros1-child-safety-monitoring -name "__pycache__" -exec rm -rf {} + 2>/dev/null; true
+```
+Then relaunch. After the fix you should see `defaulting to index 1`.
+
+---
+
+### `'python3\r': No such file or directory`
+
+**Cause:** Script has Windows CRLF line endings; Docker reads the shebang as `python3\r`.
+
+**Fix (inside container, one-time):**
+```bash
+sed -i 's/\r//' /ros1_ws/src/ros1-child-safety-monitoring/src/child_safety_monitoring/scripts/violence_detector_node.py
+```
+A `.gitattributes` file (`*.py text eol=lf`) prevents this for future checkouts.
+
+---
+
 ## Git History (this integration)
 
 | SHA | Message |
@@ -240,3 +281,7 @@ Bold = nodes or topics added/modified in this integration.
 | `4f0e46b` | test: add test for missing violence label logwarn path |
 | `0bbd38a` | docs: replace deprecated ViTFeatureExtractor with AutoImageProcessor in specs |
 | `6894586` | feat: add violence_detector_node to launch pipeline |
+| `0fcfa2f` | docs: add ViT violence detection integration reference guide |
+| `425b921` | fix: convert violence_detector_node.py to LF, add .gitattributes |
+| `9cf8a0c` | chore: add setup_ros_deps.sh and update README for robot/Docker setup |
+| `1b50bba` | fix: default violence_idx=1 for models with generic LABEL_0/LABEL_1 labels |
