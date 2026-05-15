@@ -68,7 +68,7 @@ _mock_feature_extractor.return_value = {
 }
 
 _transformers = types.ModuleType('transformers')
-_transformers.ViTFeatureExtractor = MagicMock()
+_transformers.AutoImageProcessor = MagicMock()
 _transformers.ViTForImageClassification = MagicMock()
 sys.modules['transformers'] = _transformers
 
@@ -99,7 +99,7 @@ def _build_node(frame_skip=0):
     _rospy.Publisher.reset_mock()
     _rospy.Subscriber.reset_mock()
     _rospy.logwarn.reset_mock()
-    _transformers.ViTFeatureExtractor.from_pretrained = MagicMock(
+    _transformers.AutoImageProcessor.from_pretrained = MagicMock(
         return_value=_mock_feature_extractor
     )
     _transformers.ViTForImageClassification.from_pretrained = MagicMock(

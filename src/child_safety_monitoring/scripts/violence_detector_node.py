@@ -10,7 +10,7 @@ try:
     import torch
     import torch.nn.functional as F
     from PIL import Image as PILImage
-    from transformers import ViTFeatureExtractor, ViTForImageClassification
+    from transformers import AutoImageProcessor, ViTForImageClassification
 except ImportError as exc:
     raise RuntimeError(
         f'Required packages missing: {exc}. '
@@ -30,7 +30,7 @@ class ViolenceDetectorNode:
 
         rospy.loginfo('Loading ViT model: %s (device=%s)', self.model_name, self.device)
         try:
-            self.feature_extractor = ViTFeatureExtractor.from_pretrained(self.model_name)
+            self.feature_extractor = AutoImageProcessor.from_pretrained(self.model_name)
             self.model = ViTForImageClassification.from_pretrained(self.model_name)
             self.model.to(self.device)
             self.model.eval()
@@ -39,11 +39,18 @@ class ViolenceDetectorNode:
             raise
 
         self.violence_idx = 0
+        _label_found = False
         for idx, label in self.model.config.id2label.items():
             if label.lower() == 'violence':
                 self.violence_idx = idx
+                _label_found = True
                 break
-        rospy.loginfo('ViT model loaded. violence_idx=%d', self.violence_idx)
+        if not _label_found:
+            rospy.logwarn(
+                'Label "violence" not found in id2label %s; defaulting to index 0',
+                self.model.config.id2label,
+            )
+        rospy.loginfo('ViT model loaded. violence_idx=%d (found=%s)', self.violence_idx, _label_found)
 
         self.pub = rospy.Publisher(self.vit_score_topic, Float32, queue_size=5)
         self.sub = rospy.Subscriber(
@@ -61,7 +68,7 @@ class ViolenceDetectorNode:
             rospy.logwarn('CvBridgeError in violence_detector: %s', exc)
             return
         try:
-            pil_img = PILImage.fromarray(frame[:, :, ::-1])  # BGR → RGB
+            pil_img = PILImage.fromarray(frame[:, :, ::-1].copy())  # BGR → RGB (ensure contiguous)
             inputs = self.feature_extractor(images=pil_img, return_tensors='pt')
             inputs = {k: v.to(self.device) for k, v in inputs.items()}
             with torch.no_grad():
