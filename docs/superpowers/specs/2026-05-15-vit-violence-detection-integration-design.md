@@ -74,10 +74,10 @@ Both `violence_detector_node` and `pose_estimator_node` subscribe to the same `/
 - `/violence/vit_score` (`std_msgs/Float32`, range 0.0–1.0)
 
 **Behaviour:**
-1. On startup: load `ViTForImageClassification` and `ViTFeatureExtractor` from `jaranohaal/vit-base-violence-detection`. Model is downloaded from HuggingFace on first run and cached in `~/.cache/huggingface`. If loading fails, the node logs an error and shuts down cleanly.
+1. On startup: load `ViTForImageClassification` and `AutoImageProcessor` from `jaranohaal/vit-base-violence-detection`. Model is downloaded from HuggingFace on first run and cached in `~/.cache/huggingface`. If loading fails, the node logs an error and shuts down cleanly.
 2. On each received frame: skip if `frame_count % (frame_skip + 1) != 0`.
 3. Convert ROS Image → OpenCV BGR → PIL RGB.
-4. Run `ViTFeatureExtractor` preprocessing (resize to 224×224, normalize).
+4. Run `AutoImageProcessor` preprocessing (resize to 224×224, normalize).
 5. Run `model(**inputs)` under `torch.no_grad()`.
 6. Apply softmax to logits; extract confidence of the `"violence"` class.
 7. Publish that confidence as `Float32`.
@@ -164,7 +164,7 @@ Frame arrives on /camera/image_raw
         │
 violence_detector_node:
     Convert Image → PIL RGB
-    ViTFeatureExtractor (224×224, normalize)
+    AutoImageProcessor (224×224, normalize)
     ViT inference → softmax → violence_confidence
     Publish /violence/vit_score = violence_confidence
         │

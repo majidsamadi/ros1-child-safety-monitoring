@@ -78,7 +78,7 @@ Run the following **inside the running ROS Docker container** (not on the host):
 - [ ] **Step 2: Verify import**
 
   ```bash
-  python -c "from transformers import ViTForImageClassification, ViTFeatureExtractor; print('OK')"
+  python -c "from transformers import ViTForImageClassification, AutoImageProcessor; print('OK')"
   ```
 
   Expected output: `OK`
@@ -448,7 +448,7 @@ Run the following **inside the running ROS Docker container** (not on the host):
   }
 
   _transformers = types.ModuleType('transformers')
-  _transformers.ViTFeatureExtractor = MagicMock()
+  _transformers.AutoImageProcessor = MagicMock()
   _transformers.ViTForImageClassification = MagicMock()
   sys.modules['transformers'] = _transformers
 
@@ -479,7 +479,7 @@ Run the following **inside the running ROS Docker container** (not on the host):
       _rospy.Publisher.reset_mock()
       _rospy.Subscriber.reset_mock()
       _rospy.logwarn.reset_mock()
-      _transformers.ViTFeatureExtractor.from_pretrained = MagicMock(
+      _transformers.AutoImageProcessor.from_pretrained = MagicMock(
           return_value=_mock_feature_extractor
       )
       _transformers.ViTForImageClassification.from_pretrained = MagicMock(
@@ -572,7 +572,7 @@ Run the following **inside the running ROS Docker container** (not on the host):
       import torch
       import torch.nn.functional as F
       from PIL import Image as PILImage
-      from transformers import ViTFeatureExtractor, ViTForImageClassification
+      from transformers import AutoImageProcessor, ViTForImageClassification
   except ImportError as exc:
       raise RuntimeError(
           f'Required packages missing: {exc}. '
@@ -592,7 +592,7 @@ Run the following **inside the running ROS Docker container** (not on the host):
 
           rospy.loginfo('Loading ViT model: %s (device=%s)', self.model_name, self.device)
           try:
-              self.feature_extractor = ViTFeatureExtractor.from_pretrained(self.model_name)
+              self.feature_extractor = AutoImageProcessor.from_pretrained(self.model_name)
               self.model = ViTForImageClassification.from_pretrained(self.model_name)
               self.model.to(self.device)
               self.model.eval()
