@@ -1,0 +1,9 @@
+<launch>
+  <arg name="camera_topic" default="/usb_cam/image_raw" />
+  <arg name="model_path" default="$(find child_safety_monitoring)/models/risk_model.joblib" />
+
+  <include file="$(find child_safety_monitoring)/launch/ai_shared_pipeline.launch">
+    <arg name="camera_topic" value="$(arg camera_topic)" />
+    <arg name="model_path" value="$(arg model_path)" />
+  </include>
+</launch>

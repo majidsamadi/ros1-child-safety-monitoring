@@ -1,0 +1,16 @@
+<launch>
+  <arg name="stream_url" default="0" />
+  <arg name="model_path" default="$(find child_safety_monitoring)/models/risk_model.joblib" />
+
+  <node pkg="child_safety_monitoring" type="cctv_stream_node.py" name="cctv_stream_node" output="screen">
+    <param name="stream_url" value="$(arg stream_url)" />
+    <param name="image_topic" value="/camera/image_raw" />
+    <param name="camera_frame_id" value="robot_camera" />
+    <param name="publish_rate_hz" value="15.0" />
+  </node>
+
+  <include file="$(find child_safety_monitoring)/launch/ai_shared_pipeline.launch">
+    <arg name="camera_topic" value="/camera/image_raw" />
+    <arg name="model_path" value="$(arg model_path)" />
+  </include>
+</launch>

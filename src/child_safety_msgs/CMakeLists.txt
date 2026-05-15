@@ -14,6 +14,7 @@ add_message_files(
   PersonPose2DArray.msg
   InteractionFeatures.msg
   SuspicionEvent.msg
+  RiskPrediction.msg
 )
 
 generate_messages(

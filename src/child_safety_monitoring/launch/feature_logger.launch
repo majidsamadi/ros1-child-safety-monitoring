@@ -1,0 +1,9 @@
+<launch>
+  <arg name="label" default="normal" />
+  <arg name="output_dir" default="data/feature_logs" />
+
+  <node pkg="child_safety_monitoring" type="feature_logger_node.py" name="feature_logger_node" output="screen">
+    <param name="label" value="$(arg label)" />
+    <param name="output_dir" value="$(arg output_dir)" />
+  </node>
+</launch>

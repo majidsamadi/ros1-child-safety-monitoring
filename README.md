@@ -1427,3 +1427,62 @@ rostopic list | grep -i image
 ./scripts/run_robot_demo.sh /YOUR/CAMERA/TOPIC
 ```
 
+## Version 1 AI Risk Model
+
+The project now uses AI in two places:
+
+```text
+1. YOLO Pose model
+   Camera image -> human body keypoints
+
+2. Feature-based AI risk model
+   Interaction features -> normal / warning / high prediction
+```
+
+The suspicious-activity decision is no longer only rule-based. The new AI path is:
+
+```text
+YOLO Pose
+  -> tracker
+  -> interaction_analyzer_node
+  -> risk_model_node
+  -> ai_decision_node
+  -> alert_console_node / alarm_node
+```
+
+The risk model uses a fast Random Forest classifier trained on features such as:
+
+```text
+torso_distance_norm
+wrap_score
+lift_score
+feet_off_ground_score
+limb_speed_score
+limb_accel_score
+co_motion_score
+```
+
+Train the seed model:
+
+```bash
+./scripts/train_seed_risk_model.sh
+```
+
+Run the AI simulator demo:
+
+```bash
+./scripts/run_ai_scenario_demo.sh
+```
+
+Run the AI robot demo:
+
+```bash
+./scripts/run_ai_robot_demo.sh /YOUR/CAMERA/TOPIC
+```
+
+More details are in:
+
+```text
+docs/ai_risk_model.md
+```
+

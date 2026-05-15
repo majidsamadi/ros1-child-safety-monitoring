@@ -1,0 +1,26 @@
+<launch>
+  <arg name="camera_topic" default="/camera/image_raw" />
+  <arg name="model_path" default="$(find child_safety_monitoring)/models/risk_model.joblib" />
+
+  <node pkg="child_safety_monitoring" type="pose_estimator_node.py" name="pose_estimator_node" output="screen">
+    <param name="image_topic" value="$(arg camera_topic)" />
+    <param name="raw_pose_topic" value="/poses/raw" />
+    <param name="annotated_image_topic" value="/camera/pose_overlay" />
+    <param name="model_path" value="yolo11n-pose.pt" />
+    <param name="device" value="cpu" />
+    <param name="confidence_threshold" value="0.35" />
+    <param name="keypoint_confidence_threshold" value="0.25" />
+    <param name="publish_annotated" value="true" />
+  </node>
+
+  <node pkg="child_safety_monitoring" type="tracker_node.py" name="tracker_node" output="screen" />
+  <node pkg="child_safety_monitoring" type="interaction_analyzer_node.py" name="interaction_analyzer_node" output="screen" />
+
+  <node pkg="child_safety_monitoring" type="risk_model_node.py" name="risk_model_node" output="screen">
+    <param name="model_path" value="$(arg model_path)" />
+  </node>
+
+  <node pkg="child_safety_monitoring" type="ai_decision_node.py" name="ai_decision_node" output="screen" />
+  <node pkg="child_safety_monitoring" type="alert_console_node.py" name="alert_console_node" output="screen" />
+  <node pkg="child_safety_monitoring" type="alarm_node.py" name="alarm_node" output="screen" />
+</launch>

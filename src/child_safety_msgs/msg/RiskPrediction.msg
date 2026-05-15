@@ -1,0 +1,8 @@
+std_msgs/Header header
+string label
+float32 confidence
+float32 probability_normal
+float32 probability_warning
+float32 probability_high
+string model_version
+string explanation

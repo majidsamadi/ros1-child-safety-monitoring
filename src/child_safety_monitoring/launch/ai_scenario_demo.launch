@@ -1,0 +1,19 @@
+<launch>
+  <arg name="model_path" default="$(find child_safety_monitoring)/models/risk_model.joblib" />
+
+  <node pkg="child_safety_monitoring" type="scenario_simulator_node.py" name="scenario_simulator_node" output="screen">
+    <param name="scenario" value="all" />
+    <param name="rate_hz" value="5.0" />
+    <param name="scenario_duration_seconds" value="4.0" />
+    <param name="loop" value="true" />
+    <param name="log_each_message" value="false" />
+  </node>
+
+  <node pkg="child_safety_monitoring" type="risk_model_node.py" name="risk_model_node" output="screen">
+    <param name="model_path" value="$(arg model_path)" />
+  </node>
+
+  <node pkg="child_safety_monitoring" type="ai_decision_node.py" name="ai_decision_node" output="screen" />
+  <node pkg="child_safety_monitoring" type="alert_console_node.py" name="alert_console_node" output="screen" />
+  <node pkg="child_safety_monitoring" type="alarm_node.py" name="alarm_node" output="screen" />
+</launch>
