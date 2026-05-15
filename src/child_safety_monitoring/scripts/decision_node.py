@@ -12,11 +12,13 @@ class DecisionNode:
         self.high_threshold = float(rospy.get_param('~high_threshold', 0.75))
         self.warning_persistence = float(rospy.get_param('~warning_persistence_seconds', 0.3))
         self.high_persistence = float(rospy.get_param('~high_persistence_seconds', 0.5))
-        self.vit_enabled = bool(rospy.get_param('~vit_enabled', True))
+        _raw_vit = rospy.get_param('~vit_enabled', True)
+        self.vit_enabled = _raw_vit if isinstance(_raw_vit, bool) else str(_raw_vit).lower() not in ('false', '0', 'no')
         self.vit_weight = float(rospy.get_param('~vit_weight', 0.5))
-        self.vit_score = 0.0
+        self.vit_score = None
         self.warning_since = None
         self.high_since = None
+        self.vit_sub = None
         self.pub = rospy.Publisher('/suspicion_event', SuspicionEvent, queue_size=5)
         self.sub = rospy.Subscriber('/interaction/features', InteractionFeatures,
                                     self.on_features, queue_size=5)
@@ -31,7 +33,7 @@ class DecisionNode:
     def on_features(self, f: InteractionFeatures):
         now = rospy.Time.now()
         t = now.to_sec()
-        if self.vit_enabled:
+        if self.vit_enabled and self.vit_score is not None:
             score = ((1.0 - self.vit_weight) * float(f.suspicion_score)
                      + self.vit_weight * self.vit_score)
         else:
@@ -51,12 +53,13 @@ class DecisionNode:
         e.current_time = now
         e.level = level
         e.suspicion_score = score
+        vit_part = f'; vit_score={self.vit_score:.2f}' if (self.vit_enabled and self.vit_score is not None) else ''
         e.explanation = (
             f'{level.upper()} score={score:.2f}; '
             f'contact_dist_norm={f.torso_distance_norm:.2f}; wrap={f.wrap_score:.2f}; '
             f'lift={f.lift_score:.2f}; feet={f.feet_off_ground_score:.2f}; '
             f'limb_speed={f.limb_speed_score:.2f}; limb_accel={f.limb_accel_score:.2f}; '
-            f'co_motion={f.co_motion_score:.2f}; vit_score={self.vit_score:.2f}'
+            f'co_motion={f.co_motion_score:.2f}{vit_part}'
         )
         self.pub.publish(e)
 

@@ -144,6 +144,14 @@ class TestDecisionNodeFusion(unittest.TestCase):
         # fused = 0.7 * 0.4 + 0.3 * 1.0 = 0.58
         self.assertAlmostEqual(event.suspicion_score, 0.58, places=5)
 
+    def test_fused_score_before_any_vit_message_uses_raw_pose(self):
+        """vit_enabled=True but no ViT message received yet — must use raw pose score."""
+        node = _build_node(vit_enabled=True, vit_weight=0.5, warning_threshold=0.3)
+        # vit_score is None — simulate no ViT message received
+        node.on_features(_make_features(suspicion_score=0.6))
+        event = node.pub.publish.call_args[0][0]
+        self.assertAlmostEqual(event.suspicion_score, 0.6, places=5)
+
 
 if __name__ == '__main__':
     unittest.main()
