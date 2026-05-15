@@ -38,7 +38,11 @@ class ViolenceDetectorNode:
             rospy.logerr('Failed to load ViT model %s: %s', self.model_name, exc)
             raise
 
-        self.violence_idx = 0
+        # Try to discover violence class index from model label map.
+        # Falls back to ~violence_idx param (default 1) when labels are
+        # generic (LABEL_0 / LABEL_1) as with jaranohaal/vit-base-violence-detection.
+        _param_idx = int(rospy.get_param('~violence_idx', -1))
+        self.violence_idx = 1  # safe default: model card says class 1 = violence
         _label_found = False
         for idx, label in self.model.config.id2label.items():
             if label.lower() == 'violence':
@@ -46,10 +50,18 @@ class ViolenceDetectorNode:
                 _label_found = True
                 break
         if not _label_found:
-            rospy.logwarn(
-                'Label "violence" not found in id2label %s; defaulting to index 0',
-                self.model.config.id2label,
-            )
+            if _param_idx >= 0:
+                self.violence_idx = _param_idx
+                rospy.logwarn(
+                    'Label "violence" not found in id2label %s; using ~violence_idx=%d',
+                    self.model.config.id2label, self.violence_idx,
+                )
+            else:
+                rospy.logwarn(
+                    'Label "violence" not found in id2label %s; defaulting to index %d '
+                    '(set ~violence_idx param to override)',
+                    self.model.config.id2label, self.violence_idx,
+                )
         rospy.loginfo('ViT model loaded. violence_idx=%d (found=%s)', self.violence_idx, _label_found)
 
         self.pub = rospy.Publisher(self.vit_score_topic, Float32, queue_size=5)
