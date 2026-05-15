@@ -13,7 +13,7 @@ class DecisionNode:
         self.warning_persistence = float(rospy.get_param('~warning_persistence_seconds', 0.3))
         self.high_persistence = float(rospy.get_param('~high_persistence_seconds', 0.5))
         _raw_vit = rospy.get_param('~vit_enabled', True)
-        self.vit_enabled = _raw_vit if isinstance(_raw_vit, bool) else str(_raw_vit).lower() not in ('false', '0', 'no')
+        self.vit_enabled = _raw_vit if isinstance(_raw_vit, bool) else str(_raw_vit).lower() not in ('false', '0', 'no', 'off', 'n')
         self.vit_weight = float(rospy.get_param('~vit_weight', 0.5))
         self.vit_score = None
         self.warning_since = None
