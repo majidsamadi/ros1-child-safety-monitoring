@@ -2,3 +2,5 @@ warning_threshold: 0.55
 high_threshold: 0.75
 warning_persistence_seconds: 0.3
 high_persistence_seconds: 0.5
+vit_weight: 0.5
+vit_enabled: true
