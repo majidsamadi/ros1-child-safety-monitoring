@@ -1,172 +1,139 @@
 #!/usr/bin/env python3
 from __future__ import annotations
 
-from typing import Optional
-
 import rospy
-from child_safety_msgs.msg import InteractionFeatures, RiskPrediction, SuspicionEvent
+from child_safety_msgs.msg import RiskPrediction, SuspicionEvent
 
 
 class AIDecisionNode:
-    """Conservative AI decision node.
+    """Converts AI risk probabilities into clean human-readable event levels.
 
-    The risk model can be noisy on real camera data, especially because the seed
-    model is trained from synthetic/example features. This node therefore does
-    not trust a single weak AI prediction. It requires:
+    Output levels:
+      near      = early attention signal, not an alarm
+      high      = strong suspicious movement pattern
+      critical  = critical kidnapping-risk pattern, human verification required
 
-    1. enough AI probability,
-    2. enough supporting interaction-feature evidence,
-    3. persistence over time,
-    4. cooldown between repeated events.
+    We intentionally do not output "100% kidnapping detected" because no camera
+    model can prove intent with certainty. "Critical kidnapping risk" is safer,
+    more honest, and still strong enough for a stakeholder demo.
     """
 
     def __init__(self) -> None:
         rospy.init_node('ai_decision_node')
 
         self.prediction_topic = str(rospy.get_param('~prediction_topic', '/risk_model/prediction'))
-        self.features_topic = str(rospy.get_param('~features_topic', '/interaction/features'))
         self.event_topic = str(rospy.get_param('~event_topic', '/suspicion_event'))
 
-        # Conservative defaults for real robot demos. The previous defaults were
-        # too sensitive and allowed p_high around 0.37-0.51 to trigger alarms.
-        self.warning_threshold = float(rospy.get_param('~warning_threshold', 0.72))
-        self.high_threshold = float(rospy.get_param('~high_threshold', 0.86))
-        self.warning_persistence = float(rospy.get_param('~warning_persistence_seconds', 1.0))
-        self.high_persistence = float(rospy.get_param('~high_persistence_seconds', 1.5))
-        self.cooldown_seconds = float(rospy.get_param('~event_cooldown_seconds', 4.0))
+        # Sensitivity levels. These are intentionally conservative for robot demo.
+        self.near_threshold = float(rospy.get_param('~near_threshold', 0.45))
+        self.high_threshold = float(rospy.get_param('~high_threshold', 0.75))
+        self.critical_threshold = float(rospy.get_param('~critical_threshold', 0.90))
 
-        # Feature gates stop the alarm from firing on weak/noisy model outputs.
-        self.max_feature_age_seconds = float(rospy.get_param('~max_feature_age_seconds', 1.0))
-        self.min_feature_score_warning = float(rospy.get_param('~min_feature_score_warning', 0.50))
-        self.min_feature_score_high = float(rospy.get_param('~min_feature_score_high', 0.65))
-        self.min_high_motion_evidence = float(rospy.get_param('~min_high_motion_evidence', 0.45))
+        # Persistence reduces flicker from one noisy frame.
+        self.near_persistence = float(rospy.get_param('~near_persistence_seconds', 0.20))
+        self.high_persistence = float(rospy.get_param('~high_persistence_seconds', 0.80))
+        self.critical_persistence = float(rospy.get_param('~critical_persistence_seconds', 1.20))
 
-        self.over_warning_since: Optional[float] = None
-        self.over_high_since: Optional[float] = None
-        self.last_event_level: Optional[str] = None
-        self.last_event_time = 0.0
-        self.latest_features: Optional[InteractionFeatures] = None
-        self.latest_features_time = 0.0
+        # Cooldown reduces repeated logs.
+        self.near_cooldown = float(rospy.get_param('~near_cooldown_seconds', 2.0))
+        self.high_cooldown = float(rospy.get_param('~high_cooldown_seconds', 3.0))
+        self.critical_cooldown = float(rospy.get_param('~critical_cooldown_seconds', 5.0))
+
+        self.near_since = None
+        self.high_since = None
+        self.critical_since = None
+        self.last_event_time_by_level = {}
 
         self.pub = rospy.Publisher(self.event_topic, SuspicionEvent, queue_size=10)
-        self.pred_sub = rospy.Subscriber(self.prediction_topic, RiskPrediction, self.on_prediction, queue_size=10)
-        self.features_sub = rospy.Subscriber(self.features_topic, InteractionFeatures, self.on_features, queue_size=10)
+        self.sub = rospy.Subscriber(self.prediction_topic, RiskPrediction, self.on_prediction, queue_size=10)
 
         rospy.loginfo(
-            'AI decision node started. warning>=%.2f high>=%.2f, warning_persist=%.1fs high_persist=%.1fs',
-            self.warning_threshold,
+            'AI decision node started. levels: near>=%.2f high>=%.2f critical>=%.2f',
+            self.near_threshold,
             self.high_threshold,
-            self.warning_persistence,
-            self.high_persistence,
+            self.critical_threshold,
         )
 
-    def on_features(self, msg: InteractionFeatures) -> None:
-        self.latest_features = msg
-        self.latest_features_time = rospy.Time.now().to_sec()
+    @staticmethod
+    def _clamp(value: float) -> float:
+        if value != value:  # NaN check
+            return 0.0
+        return max(0.0, min(1.0, float(value)))
 
     def _cooldown_active(self, level: str, now_sec: float) -> bool:
-        if self.last_event_level != level:
+        last = self.last_event_time_by_level.get(level)
+        if last is None:
             return False
-        return (now_sec - self.last_event_time) < self.cooldown_seconds
+        cooldown = {
+            'near': self.near_cooldown,
+            'high': self.high_cooldown,
+            'critical': self.critical_cooldown,
+        }.get(level, 2.0)
+        return (now_sec - last) < cooldown
 
-    def _feature_summary(self) -> str:
-        f = self.latest_features
-        if f is None:
-            return 'features=missing'
-        return (
-            f'features: score={f.suspicion_score:.2f}, dist={f.torso_distance_norm:.2f}, '
-            f'wrap={f.wrap_score:.2f}, lift={f.lift_score:.2f}, feet={f.feet_off_ground_score:.2f}, '
-            f'limb_speed={f.limb_speed_score:.2f}, limb_accel={f.limb_accel_score:.2f}, co_motion={f.co_motion_score:.2f}'
-        )
-
-    def _feature_gates(self, now_sec: float):
-        f = self.latest_features
-        if f is None or (now_sec - self.latest_features_time) > self.max_feature_age_seconds:
-            return False, False
-
-        feature_score = float(f.suspicion_score)
-        motion_evidence = max(
-            float(f.lift_score),
-            float(f.feet_off_ground_score),
-            float(f.limb_speed_score),
-            float(f.limb_accel_score),
-            float(f.co_motion_score),
-        )
-
-        warning_gate = feature_score >= self.min_feature_score_warning
-        high_gate = (
-            feature_score >= self.min_feature_score_high
-            and motion_evidence >= self.min_high_motion_evidence
-        )
-        return warning_gate, high_gate
-
-    def on_prediction(self, pred: RiskPrediction) -> None:
-        if pred.label in ('model_missing', 'model_error'):
-            rospy.logwarn_throttle(5.0, 'AI decision waiting for valid model: %s', pred.explanation)
-            return
-
+    def _publish_event(self, pred: RiskPrediction, level: str, score: float, event_start_sec: float) -> None:
         now = rospy.Time.now()
         now_sec = now.to_sec()
-
-        p_normal = float(pred.probability_normal)
-        p_warning = float(pred.probability_warning)
-        p_high = float(pred.probability_high)
-
-        warning_gate, high_gate = self._feature_gates(now_sec)
-
-        high_candidate = p_high >= self.high_threshold and high_gate
-        warning_candidate = (
-            (p_warning >= self.warning_threshold or p_high >= self.warning_threshold)
-            and warning_gate
-        )
-
-        if warning_candidate:
-            if self.over_warning_since is None:
-                self.over_warning_since = now_sec
-        else:
-            self.over_warning_since = None
-
-        if high_candidate:
-            if self.over_high_since is None:
-                self.over_high_since = now_sec
-        else:
-            self.over_high_since = None
-
-        level = None
-        score = 0.0
-        event_start = now
-
-        if self.over_high_since is not None and (now_sec - self.over_high_since) >= self.high_persistence:
-            level = 'high'
-            score = p_high
-            event_start = rospy.Time.from_sec(self.over_high_since)
-        elif self.over_warning_since is not None and (now_sec - self.over_warning_since) >= self.warning_persistence:
-            level = 'warning'
-            score = max(p_warning, p_high)
-            event_start = rospy.Time.from_sec(self.over_warning_since)
-
-        if level is None:
-            if p_normal >= 0.70:
-                self.last_event_level = 'normal'
-            return
-
         if self._cooldown_active(level, now_sec):
             return
 
-        self.last_event_level = level
-        self.last_event_time = now_sec
+        self.last_event_time_by_level[level] = now_sec
 
         event = SuspicionEvent()
         event.header = pred.header
-        event.event_start = event_start
+        event.event_start = rospy.Time.from_sec(event_start_sec)
         event.current_time = now
         event.level = level
         event.suspicion_score = float(score)
         event.explanation = (
-            f'AI {level.upper()} | p_normal={p_normal:.2f}, p_warning={p_warning:.2f}, p_high={p_high:.2f}; '
-            f'{self._feature_summary()}'
+            f'AI {level.upper()} | '
+            f'p_normal={pred.probability_normal:.2f}, '
+            f'p_warning={pred.probability_warning:.2f}, '
+            f'p_high={pred.probability_high:.2f}, '
+            f'label={pred.label}, confidence={pred.confidence:.2f}'
         )
         self.pub.publish(event)
+
+    def on_prediction(self, pred: RiskPrediction) -> None:
+        now_sec = rospy.Time.now().to_sec()
+
+        p_warning = self._clamp(pred.probability_warning)
+        p_high = self._clamp(pred.probability_high)
+        p_risk = max(p_warning, p_high)
+
+        # Near suspicious: warning/high probability begins to rise.
+        if p_risk >= self.near_threshold:
+            if self.near_since is None:
+                self.near_since = now_sec
+        else:
+            self.near_since = None
+
+        # High suspicious: high probability is strong.
+        if p_high >= self.high_threshold:
+            if self.high_since is None:
+                self.high_since = now_sec
+        else:
+            self.high_since = None
+
+        # Critical kidnapping risk: very high probability stays high.
+        if p_high >= self.critical_threshold:
+            if self.critical_since is None:
+                self.critical_since = now_sec
+        else:
+            self.critical_since = None
+
+        # Highest level wins.
+        if self.critical_since is not None and (now_sec - self.critical_since) >= self.critical_persistence:
+            self._publish_event(pred, 'critical', p_high, self.critical_since)
+            return
+
+        if self.high_since is not None and (now_sec - self.high_since) >= self.high_persistence:
+            self._publish_event(pred, 'high', p_high, self.high_since)
+            return
+
+        if self.near_since is not None and (now_sec - self.near_since) >= self.near_persistence:
+            self._publish_event(pred, 'near', p_risk, self.near_since)
+            return
 
 
 def main() -> None:

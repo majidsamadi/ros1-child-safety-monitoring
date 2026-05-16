@@ -3,59 +3,46 @@ from __future__ import annotations
 
 import rospy
 from std_msgs.msg import String
-from child_safety_msgs.msg import InteractionFeatures, RiskPrediction, SuspicionEvent
+from child_safety_msgs.msg import SuspicionEvent
 
 
 class AlarmNode:
-    """Alarm state node.
+    """Publishes clean alarm states from filtered AI events only.
 
-    Important: raw AI predictions can be noisy. This node turns warning/high ON
-    only from filtered /suspicion_event messages. It uses /risk_model/prediction
-    only to turn the alarm OFF when the AI is confidently normal.
+    No NORMAL console spam. The normal state is still published as ALARM_OFF
+    at startup, but it is not repeatedly printed.
     """
 
     def __init__(self):
-        self.normal_threshold = float(rospy.get_param('~normal_threshold', 0.55))
-        self.off_probability_threshold = float(rospy.get_param('~off_probability_threshold', 0.75))
-        self.last_state = 'unknown'
-
+        self.last_state = None
         self.pub = rospy.Publisher('/alarm/state', String, queue_size=5, latch=True)
+        rospy.Subscriber('/suspicion_event', SuspicionEvent, self.on_event, queue_size=10)
+        rospy.loginfo('Alarm node started. Waiting for filtered AI events...')
+        self.publish_state('ALARM_OFF', log=False)
 
-        rospy.Subscriber('/risk_model/prediction', RiskPrediction, self.on_prediction, queue_size=5)
-        rospy.Subscriber('/suspicion_event', SuspicionEvent, self.on_event, queue_size=5)
-        rospy.Subscriber('/interaction/features', InteractionFeatures, self.on_features_backup, queue_size=5)
-
-        rospy.loginfo('Alarm node started. Publishing /alarm/state')
-
-    def publish_state(self, state: str):
+    def publish_state(self, state: str, log: bool = True):
         if state == self.last_state:
             return
         self.last_state = state
-        self.pub.publish(String(state))
+        self.pub.publish(String(data=state))
 
-        if state == 'HIGH_ALARM_ON':
-            rospy.logerr('[ALARM ON] High-risk suspicious movement pattern detected')
-        elif state == 'WARNING':
-            rospy.logwarn('[ALARM WARNING] Suspicious interaction pattern detected')
-        elif state == 'ALARM_OFF':
-            rospy.loginfo('[ALARM OFF] Monitoring normally')
-
-    def on_prediction(self, msg: RiskPrediction):
-        # Do not turn ON from raw predictions. ai_decision_node filters them.
-        if msg.label == 'normal' and msg.probability_normal >= self.off_probability_threshold:
-            self.publish_state('ALARM_OFF')
-
-    def on_features_backup(self, msg: InteractionFeatures):
-        # Backup mode only for legacy non-AI tests.
-        if self.last_state == 'unknown' and msg.suspicion_score < self.normal_threshold:
-            self.publish_state('ALARM_OFF')
+        if not log:
+            return
+        if state == 'NEAR_SUSPICIOUS':
+            rospy.logwarn('[ALARM NEAR] Monitoring suspicious early signal')
+        elif state == 'HIGH_SUSPICIOUS':
+            rospy.logerr('[ALARM HIGH] High suspicious movement pattern')
+        elif state == 'CRITICAL_KIDNAPPING_RISK':
+            rospy.logerr('[ALARM CRITICAL] Critical kidnapping risk signal. Human verification required.')
 
     def on_event(self, msg: SuspicionEvent):
-        level = msg.level.lower()
-        if level == 'high':
-            self.publish_state('HIGH_ALARM_ON')
-        elif level == 'warning':
-            self.publish_state('WARNING')
+        level = msg.level.lower().strip()
+        if level == 'critical':
+            self.publish_state('CRITICAL_KIDNAPPING_RISK')
+        elif level == 'high':
+            self.publish_state('HIGH_SUSPICIOUS')
+        elif level in ('near', 'warning'):
+            self.publish_state('NEAR_SUSPICIOUS')
 
 
 def main():
