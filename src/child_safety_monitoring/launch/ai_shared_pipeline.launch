@@ -20,7 +20,16 @@
     <param name="model_path" value="$(arg model_path)" />
   </node>
 
-  <node pkg="child_safety_monitoring" type="ai_decision_node.py" name="ai_decision_node" output="screen" />
+  <node pkg="child_safety_monitoring" type="ai_decision_node.py" name="ai_decision_node" output="screen">
+    <param name="warning_threshold" value="0.72" />
+    <param name="high_threshold" value="0.86" />
+    <param name="warning_persistence_seconds" value="1.0" />
+    <param name="high_persistence_seconds" value="1.5" />
+    <param name="event_cooldown_seconds" value="4.0" />
+    <param name="min_feature_score_warning" value="0.50" />
+    <param name="min_feature_score_high" value="0.65" />
+    <param name="min_high_motion_evidence" value="0.45" />
+  </node>
   <node pkg="child_safety_monitoring" type="alert_console_node.py" name="alert_console_node" output="screen" />
   <node pkg="child_safety_monitoring" type="alarm_node.py" name="alarm_node" output="screen" />
 </launch>
