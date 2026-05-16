@@ -1,4 +1,5 @@
 <launch>
+  <arg name="pose_model" default="yolo11n-pose.pt" />
   <arg name="stream_url" default="0" />
   <arg name="model_path" default="$(find child_safety_monitoring)/models/risk_model.joblib" />
 
