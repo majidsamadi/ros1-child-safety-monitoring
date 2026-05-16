@@ -17,6 +17,7 @@ catkin_package(
 )
 
 catkin_install_python(PROGRAMS
+  scripts/browser_stream_viewer_node.py
   scripts/cctv_stream_node.py
   scripts/pose_estimator_node.py
   scripts/tracker_node.py

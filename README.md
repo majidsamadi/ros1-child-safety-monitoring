@@ -489,3 +489,23 @@ Correct description:
 ```text
 A ROS-based suspicious movement-pattern detection prototype using pose estimation and feature-based AI risk classification.
 ```
+
+## One-command robot viewer
+
+The robot demo can be run with a built-in browser viewer, so teammates do not need to paste Python code into the terminal.
+
+For the AI robot stream demo:
+
+```bash
+source /opt/ros/noetic/setup.bash
+source devel/setup.bash
+./scripts/run_ai_robot_stream_with_viewer.sh /dev/video2
+```
+
+The viewer node automatically prints browser URLs such as:
+
+```text
+Open browser: http://ROBOT_IP:8080/video
+```
+
+Open that URL from a laptop on the same network. If `/dev/video2` is not the correct robot camera, try `/dev/video0`.

@@ -1,0 +1,17 @@
+<launch>
+  <arg name="stream_url" default="/dev/video2" />
+  <arg name="pose_model" default="yolo11n-pose.pt" />
+  <arg name="viewer_topic" default="/camera/pose_overlay" />
+  <arg name="viewer_port" default="8080" />
+
+  <include file="$(find child_safety_monitoring)/launch/stream_demo.launch">
+    <arg name="stream_url" value="$(arg stream_url)" />
+    <arg name="pose_model" value="$(arg pose_model)" />
+  </include>
+
+  <node pkg="child_safety_monitoring" type="browser_stream_viewer_node.py" name="browser_stream_viewer_node" output="screen">
+    <param name="image_topic" value="$(arg viewer_topic)" />
+    <param name="fallback_image_topic" value="/camera/image_raw" />
+    <param name="port" value="$(arg viewer_port)" />
+  </node>
+</launch>
