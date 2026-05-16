@@ -1,15 +1,25 @@
 # Feature-Based AI Risk Model
 
-This project now has two AI stages:
+This project uses AI in two stages.
 
-1. **YOLO Pose** detects people and body keypoints.
-2. **Feature-based AI risk model** classifies interaction risk using features over time.
+The first AI stage is YOLO Pose. It detects people and body keypoints from camera frames.
 
-The AI risk model is Version 1 because it is fast, explainable, and practical on the Jupiter robot.
+The second AI stage is a feature-based risk classifier. It receives interpretable interaction features and predicts `normal`, `warning`, or `high`.
 
-## Input features
+## Why this model type?
 
-The model receives these values from `/interaction/features`:
+The Jupiter robot needs a fast model. A full video action-recognition model would be harder to train and heavier to run. A feature-based classifier is more practical for the current project.
+
+Benefits:
+
+- fast on CPU,
+- easier to train with small data,
+- easier to explain,
+- works with the features already produced by the ROS pipeline.
+
+## Features
+
+The classifier uses:
 
 ```text
 torso_distance_norm
@@ -21,40 +31,41 @@ limb_accel_score
 co_motion_score
 ```
 
-## Output
+These features are published by `interaction_analyzer_node.py` on `/interaction/features`.
 
-The model publishes `/risk_model/prediction`:
+## Model output
+
+`risk_model_node.py` publishes `/risk_model/prediction` with:
 
 ```text
-label: normal / warning / high
+label
+confidence
 probability_normal
 probability_warning
 probability_high
-confidence
+model_version
+explanation
 ```
 
-Then `ai_decision_node.py` converts AI predictions into `/suspicion_event`.
+## Decision logic
 
-## Training
+`ai_decision_node.py` applies:
 
-Train a seed demo model:
+- probability thresholds,
+- time persistence,
+- event cooldown.
+
+This prevents one bad frame from triggering an alert.
+
+## Training workflow
+
+Start with seed model:
 
 ```bash
 ./scripts/train_seed_risk_model.sh
 ```
 
-This creates:
-
-```text
-src/child_safety_monitoring/models/risk_model.joblib
-src/child_safety_monitoring/models/risk_model.json
-```
-
-The seed model is for engineering/demo only. For final tuning, collect safe staged feature logs.
-
-## Collecting safe data
-
-Run the live pipeline, then in another terminal:
+Collect safe data:
 
 ```bash
 ./scripts/log_features.sh normal
@@ -62,18 +73,12 @@ Run the live pipeline, then in another terminal:
 ./scripts/log_features.sh high
 ```
 
-Only use safe staged movements. Do not lift anyone or perform risky actions.
-
-## AI demo launch files
-
-Simulator AI demo:
+Retrain:
 
 ```bash
-roslaunch child_safety_monitoring ai_scenario_demo.launch
+python3 src/child_safety_monitoring/scripts/train_risk_model.py --data-dir data/feature_logs
 ```
 
-Robot camera AI demo:
+## Important limitation
 
-```bash
-roslaunch child_safety_monitoring ai_jupiter_robot_camera_demo.launch camera_topic:=/YOUR/CAMERA/TOPIC
-```
+The seed model is not a real validated safety model. It is for demonstration and engineering tests. Real performance requires more labeled feature logs from safe staged scenarios.

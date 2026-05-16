@@ -1,10 +1,10 @@
+# Core Python dependencies for ROS 1 Noetic project.
+# Do not pin torch here because the Jupiter robot may already have a CUDA build.
+# If torch is missing, use requirements_torch_cpu_optional.txt.
 numpy==1.24.4
 opencv-python==4.8.1.78
 ultralytics==8.3.40
 scikit-learn==1.3.2
 joblib==1.3.2
---extra-index-url https://download.pytorch.org/whl/cpu
-torch==2.2.2+cpu
-torchvision==0.17.2+cpu
 PyYAML>=6.0
 requests>=2.31.0
