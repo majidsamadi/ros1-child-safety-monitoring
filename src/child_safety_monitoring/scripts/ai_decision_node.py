@@ -4,18 +4,25 @@ from __future__ import annotations
 from typing import Optional
 
 import rospy
+
 from child_safety_msgs.msg import InteractionFeatures, RiskPrediction, SuspicionEvent
 
 
 class AIDecisionNode:
-    """Filtered AI decision layer.
+    """Evidence-aware AI decision layer.
 
-    This node converts AI probabilities + interaction features into event levels:
-      - near: weak early signal; useful for live demo feedback, not a real alarm
-      - high: strong suspicious movement pattern
-      - critical: very strong critical risk pattern, requires human verification
+    The seed Random Forest model is useful, but during early robot demos it can
+    keep p_high low even when the interaction features show strong movement
+    evidence. This node combines both sources:
 
-    The model cannot prove kidnapping or intent. It outputs risk levels only.
+    - AI probabilities from /risk_model/prediction
+    - live interaction evidence from /interaction/features
+
+    It still does not claim to prove kidnapping or intent. It outputs risk levels:
+
+    - near: early suspicious signal
+    - high: strong suspicious movement pattern
+    - critical: very strong critical risk pattern requiring human attention
     """
 
     def __init__(self):
@@ -25,29 +32,35 @@ class AIDecisionNode:
         self.features_topic = rospy.get_param('~features_topic', '/interaction/features')
         self.event_topic = rospy.get_param('~event_topic', '/suspicion_event')
 
-        # Near is intentionally sensitive so live staged actions show feedback.
-        # High/critical stay conservative.
+        # NEAR is intentionally sensitive so live testing gives feedback.
         self.near_probability_threshold = float(rospy.get_param('~near_probability_threshold', 0.30))
         self.near_feature_score_threshold = float(rospy.get_param('~near_feature_score_threshold', 0.15))
         self.near_wrap_threshold = float(rospy.get_param('~near_wrap_threshold', 0.30))
         self.near_distance_threshold = float(rospy.get_param('~near_distance_threshold', 1.80))
 
-        self.high_threshold = float(rospy.get_param('~high_threshold', 0.75))
-        self.critical_threshold = float(rospy.get_param('~critical_threshold', 0.90))
+        # Probability thresholds are kept for model-based triggering.
+        # The evidence path below can also trigger high/critical when live
+        # features are strong even if the seed model is under-confident.
+        self.high_probability_threshold = float(rospy.get_param('~high_probability_threshold', 0.60))
+        self.critical_probability_threshold = float(rospy.get_param('~critical_probability_threshold', 0.78))
+
+        # Evidence thresholds tuned for staged live robot demos.
+        self.high_feature_score_threshold = float(rospy.get_param('~high_feature_score_threshold', 0.45))
+        self.high_motion_threshold = float(rospy.get_param('~high_motion_threshold', 0.35))
+        self.high_wrap_threshold = float(rospy.get_param('~high_wrap_threshold', 0.75))
+
+        self.critical_feature_score_threshold = float(rospy.get_param('~critical_feature_score_threshold', 0.52))
+        self.critical_lift_threshold = float(rospy.get_param('~critical_lift_threshold', 0.75))
+        self.critical_limb_threshold = float(rospy.get_param('~critical_limb_threshold', 0.70))
+        self.critical_accel_threshold = float(rospy.get_param('~critical_accel_threshold', 0.55))
 
         self.near_persistence = float(rospy.get_param('~near_persistence_seconds', 0.20))
-        self.high_persistence = float(rospy.get_param('~high_persistence_seconds', 0.80))
-        self.critical_persistence = float(rospy.get_param('~critical_persistence_seconds', 1.20))
+        self.high_persistence = float(rospy.get_param('~high_persistence_seconds', 0.60))
+        self.critical_persistence = float(rospy.get_param('~critical_persistence_seconds', 0.50))
 
         self.near_cooldown = float(rospy.get_param('~near_cooldown_seconds', 2.0))
         self.high_cooldown = float(rospy.get_param('~high_cooldown_seconds', 3.0))
         self.critical_cooldown = float(rospy.get_param('~critical_cooldown_seconds', 5.0))
-
-        # Evidence gates for high/critical. These avoid alarms from weak model output.
-        self.min_high_feature_score = float(rospy.get_param('~min_high_feature_score', 0.35))
-        self.min_high_motion_evidence = float(rospy.get_param('~min_high_motion_evidence', 0.25))
-        self.min_critical_feature_score = float(rospy.get_param('~min_critical_feature_score', 0.65))
-        self.min_critical_motion_evidence = float(rospy.get_param('~min_critical_motion_evidence', 0.55))
         self.max_feature_age_seconds = float(rospy.get_param('~max_feature_age_seconds', 1.0))
 
         self.latest_features: Optional[InteractionFeatures] = None
@@ -62,11 +75,10 @@ class AIDecisionNode:
         rospy.Subscriber(self.features_topic, InteractionFeatures, self.on_features, queue_size=10)
 
         rospy.loginfo(
-            'AI decision node started. near feature>=%.2f or risk>=%.2f; high>=%.2f critical>=%.2f',
+            'AI decision node started. evidence-aware mode: near_feat>=%.2f, high_feat>=%.2f, critical_feat>=%.2f',
             self.near_feature_score_threshold,
-            self.near_probability_threshold,
-            self.high_threshold,
-            self.critical_threshold,
+            self.high_feature_score_threshold,
+            self.critical_feature_score_threshold,
         )
 
     @staticmethod
@@ -91,11 +103,11 @@ class AIDecisionNode:
         if f is None:
             return 0.0
         return max(
-            float(f.lift_score),
-            float(f.feet_off_ground_score),
-            float(f.limb_speed_score),
-            float(f.limb_accel_score),
-            float(f.co_motion_score),
+            self._clamp(f.lift_score),
+            self._clamp(f.feet_off_ground_score),
+            self._clamp(f.limb_speed_score),
+            self._clamp(f.limb_accel_score),
+            self._clamp(f.co_motion_score),
         )
 
     def _near_feature_evidence(self) -> bool:
@@ -103,8 +115,8 @@ class AIDecisionNode:
         if f is None:
             return False
         return (
-            float(f.suspicion_score) >= self.near_feature_score_threshold
-            or float(f.wrap_score) >= self.near_wrap_threshold
+            self._clamp(f.suspicion_score) >= self.near_feature_score_threshold
+            or self._clamp(f.wrap_score) >= self.near_wrap_threshold
             or float(f.torso_distance_norm) <= self.near_distance_threshold
         )
 
@@ -162,7 +174,12 @@ class AIDecisionNode:
 
         fresh = self._features_fresh(now_sec)
         f = self.latest_features if fresh else None
-        feature_score = float(f.suspicion_score) if f is not None else 0.0
+
+        feature_score = self._clamp(f.suspicion_score) if f is not None else 0.0
+        wrap = self._clamp(f.wrap_score) if f is not None else 0.0
+        lift = self._clamp(f.lift_score) if f is not None else 0.0
+        limb_speed = self._clamp(f.limb_speed_score) if f is not None else 0.0
+        limb_accel = self._clamp(f.limb_accel_score) if f is not None else 0.0
         motion = self._motion_evidence() if f is not None else 0.0
 
         near_candidate = False
@@ -171,19 +188,25 @@ class AIDecisionNode:
         else:
             near_candidate = p_risk >= self.near_probability_threshold
 
-        high_candidate = (
-            p_high >= self.high_threshold
-            and fresh
-            and feature_score >= self.min_high_feature_score
-            and (motion >= self.min_high_motion_evidence or (f is not None and f.wrap_score >= 0.65))
+        # HIGH can now trigger from either model probability OR strong live evidence.
+        high_by_probability = p_high >= self.high_probability_threshold and feature_score >= self.high_feature_score_threshold
+        high_by_evidence = (
+            fresh
+            and feature_score >= self.high_feature_score_threshold
+            and wrap >= self.high_wrap_threshold
+            and motion >= self.high_motion_threshold
         )
+        high_candidate = high_by_probability or high_by_evidence
 
-        critical_candidate = (
-            p_high >= self.critical_threshold
-            and fresh
-            and feature_score >= self.min_critical_feature_score
-            and motion >= self.min_critical_motion_evidence
+        # CRITICAL is very strong live evidence. This is a risk alert, not proof of kidnapping.
+        critical_by_probability = p_high >= self.critical_probability_threshold and feature_score >= self.critical_feature_score_threshold
+        critical_by_evidence = (
+            fresh
+            and feature_score >= self.critical_feature_score_threshold
+            and lift >= self.critical_lift_threshold
+            and (limb_speed >= self.critical_limb_threshold or limb_accel >= self.critical_accel_threshold)
         )
+        critical_candidate = critical_by_probability or critical_by_evidence
 
         if near_candidate:
             if self.near_since is None:
@@ -204,11 +227,11 @@ class AIDecisionNode:
             self.critical_since = None
 
         if self.critical_since is not None and now_sec - self.critical_since >= self.critical_persistence:
-            self._publish_event(pred, 'critical', p_high, self.critical_since)
+            self._publish_event(pred, 'critical', max(p_high, feature_score), self.critical_since)
             return
 
         if self.high_since is not None and now_sec - self.high_since >= self.high_persistence:
-            self._publish_event(pred, 'high', p_high, self.high_since)
+            self._publish_event(pred, 'high', max(p_high, p_warning, feature_score), self.high_since)
             return
 
         if self.near_since is not None and now_sec - self.near_since >= self.near_persistence:
