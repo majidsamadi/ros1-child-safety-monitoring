@@ -526,3 +526,47 @@ DEBUG | dist=... wrap=... lift=... feet=... limb=... co=... feat_score=... | lab
 
 If actions do not trigger alerts, check these values first. If `wrap`, `lift`, `limb`, and `co` stay low, the model is receiving normal-looking features even if the action looks suspicious to a human.
 
+
+## Real Robot-Camera Data Collection and Training
+
+The seed AI model is only for proving the pipeline works. For reliable detection on the Jupiter robot, collect real robot-camera feature data and retrain the model.
+
+Use adult volunteers and safe staged actions only. Do not lift a real child.
+
+Recommended labels:
+
+```text
+normal_far
+normal_close
+normal_hug
+near_suspicious
+high_suspicious
+```
+
+If the pipeline is already running:
+
+```bash
+./scripts/record_feature_data.sh normal_far 30
+./scripts/record_feature_data.sh normal_close 30
+./scripts/record_feature_data.sh normal_hug 30
+./scripts/record_feature_data.sh near_suspicious 30
+./scripts/record_feature_data.sh high_suspicious 30
+```
+
+Then train:
+
+```bash
+./scripts/train_robot_ai_model.sh
+```
+
+Debug live predictions:
+
+```bash
+./scripts/run_ai_debug_console.sh
+```
+
+Full details are in:
+
+```text
+docs/data_collection_training.md
+```
