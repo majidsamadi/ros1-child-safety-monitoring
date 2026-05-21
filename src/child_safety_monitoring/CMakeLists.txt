@@ -29,6 +29,7 @@ catkin_install_python(PROGRAMS
   scripts/ai_decision_node.py
   scripts/feature_logger_node.py
   scripts/scenario_simulator_node.py
+  scripts/risk_debug_console_node.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 

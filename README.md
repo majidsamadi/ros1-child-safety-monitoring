@@ -509,3 +509,20 @@ Open browser: http://ROBOT_IP:8080/video
 ```
 
 Open that URL from a laptop on the same network. If `/dev/video2` is not the correct robot camera, try `/dev/video0`.
+
+## Live AI Debug Console
+
+During real robot testing, the AI may print nothing if the live risk stays below the alert thresholds. To see what the model is thinking, run this in another robot terminal while the main demo is running:
+
+```bash
+./scripts/run_ai_debug_console.sh
+```
+
+It prints a compact line once per second with the interaction features and AI probabilities:
+
+```text
+DEBUG | dist=... wrap=... lift=... feet=... limb=... co=... feat_score=... | label=... pN=... pW=... pH=...
+```
+
+If actions do not trigger alerts, check these values first. If `wrap`, `lift`, `limb`, and `co` stay low, the model is receiving normal-looking features even if the action looks suspicious to a human.
+
