@@ -37,3 +37,6 @@ secrets.*
 !data/debug_clips/.gitkeep
 !data/rosbags/.gitkeep
 !data/videos/.gitkeep
+.catkin_workspace
+src/CMakeLists.txt
+data/feature_logs/review_bad/

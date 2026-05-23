@@ -1,0 +1,20 @@
+{
+  "model_version": "feature-rf-robot-v1",
+  "feature_names": [
+    "torso_distance_norm",
+    "wrap_score",
+    "lift_score",
+    "feet_off_ground_score",
+    "limb_speed_score",
+    "limb_accel_score",
+    "co_motion_score"
+  ],
+  "classes": [
+    "high",
+    "normal",
+    "warning"
+  ],
+  "trained_with_seed_data": false,
+  "data_dir": "/home/mustar/Documents/majidsamadi/kidnappingproject/ros1-child-safety-monitoring/data/feature_logs",
+  "note": "Use real robot-camera logs for reliable performance. Seed-only model is not reliable."
+}
