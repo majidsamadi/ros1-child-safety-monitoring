@@ -33,23 +33,23 @@ class AIDecisionNode:
         self.event_topic = rospy.get_param('~event_topic', '/suspicion_event')
 
         # NEAR is intentionally sensitive so live testing gives feedback.
-        self.near_probability_threshold = float(rospy.get_param('~near_probability_threshold', 0.30))
-        self.near_feature_score_threshold = float(rospy.get_param('~near_feature_score_threshold', 0.15))
+        self.near_probability_threshold = float(rospy.get_param('~near_probability_threshold', 0.70))
+        self.near_feature_score_threshold = float(rospy.get_param('~near_feature_score_threshold', 0.35))
         self.near_wrap_threshold = float(rospy.get_param('~near_wrap_threshold', 0.30))
         self.near_distance_threshold = float(rospy.get_param('~near_distance_threshold', 1.80))
 
         # Probability thresholds are kept for model-based triggering.
         # The evidence path below can also trigger high/critical when live
         # features are strong even if the seed model is under-confident.
-        self.high_probability_threshold = float(rospy.get_param('~high_probability_threshold', 0.60))
-        self.critical_probability_threshold = float(rospy.get_param('~critical_probability_threshold', 0.78))
+        self.high_probability_threshold = float(rospy.get_param('~high_probability_threshold', 0.80))
+        self.critical_probability_threshold = float(rospy.get_param('~critical_probability_threshold', 0.90))
 
         # Evidence thresholds tuned for staged live robot demos.
-        self.high_feature_score_threshold = float(rospy.get_param('~high_feature_score_threshold', 0.45))
+        self.high_feature_score_threshold = float(rospy.get_param('~high_feature_score_threshold', 0.60))
         self.high_motion_threshold = float(rospy.get_param('~high_motion_threshold', 0.35))
         self.high_wrap_threshold = float(rospy.get_param('~high_wrap_threshold', 0.75))
 
-        self.critical_feature_score_threshold = float(rospy.get_param('~critical_feature_score_threshold', 0.52))
+        self.critical_feature_score_threshold = float(rospy.get_param('~critical_feature_score_threshold', 0.75))
         self.critical_lift_threshold = float(rospy.get_param('~critical_lift_threshold', 0.75))
         self.critical_limb_threshold = float(rospy.get_param('~critical_limb_threshold', 0.70))
         self.critical_accel_threshold = float(rospy.get_param('~critical_accel_threshold', 0.55))
@@ -183,12 +183,17 @@ class AIDecisionNode:
         motion = self._motion_evidence() if f is not None else 0.0
 
         near_candidate = False
-        if fresh:
-            near_candidate = self._near_feature_evidence() or p_risk >= self.near_probability_threshold
-        else:
-            near_candidate = p_risk >= self.near_probability_threshold
 
-        # HIGH can now trigger from either model probability OR strong live evidence.
+        # NEAR must require real interaction feature evidence.
+        # This prevents false alarms from one quiet person or empty/low-evidence frames.
+        if f is not None:
+            near_candidate = (
+                feature_score >= self.near_feature_score_threshold
+                and (
+                    self._near_feature_evidence()
+                    or p_risk >= self.near_probability_threshold
+                )
+            )
         high_by_probability = p_high >= self.high_probability_threshold and feature_score >= self.high_feature_score_threshold
         high_by_evidence = (
             fresh
