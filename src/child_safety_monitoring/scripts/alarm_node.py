@@ -63,9 +63,12 @@ def _generate_siren_wav(path: str, freq_low: float = 700.0, freq_high: float = 1
 class AlarmNode:
     def __init__(self):
         self.normal_threshold = float(rospy.get_param('~normal_threshold', 0.55))
+        self.repeat_interval = float(rospy.get_param('~alarm_repeat_seconds', 3.0))
         self.last_state = 'unknown'
-        self._alarm_proc = None  # currently playing aplay subprocess
+        self._alarm_proc = None
         self._alarm_lock = threading.Lock()
+        self._repeat_timer = None  # repeating timer thread
+        self._active_wav = None    # which WAV is currently repeating
 
         # Pre-generate alarm WAV files once at startup
         self._high_wav = os.path.join(tempfile.gettempdir(), 'csm_high_alarm.wav')
@@ -83,22 +86,42 @@ class AlarmNode:
         rospy.loginfo('Alarm node started. Publishing /alarm/state')
 
     def _play_audio(self, wav_path: str) -> None:
-        """Play a WAV file non-blockingly via aplay (Linux) in a background thread."""
-        def _play():
-            with self._alarm_lock:
-                # Stop any currently playing alarm first
-                if self._alarm_proc and self._alarm_proc.poll() is None:
-                    self._alarm_proc.terminate()
-                try:
-                    self._alarm_proc = subprocess.Popen(
-                        ['aplay', '-q', wav_path],
-                        stdout=subprocess.DEVNULL,
-                        stderr=subprocess.DEVNULL,
-                    )
-                except FileNotFoundError:
-                    # aplay not available — fall back to terminal bell
-                    print('\a', end='', flush=True)
-        threading.Thread(target=_play, daemon=True).start()
+        """Play a WAV file via aplay. Stops any currently playing alarm first."""
+        with self._alarm_lock:
+            if self._alarm_proc and self._alarm_proc.poll() is None:
+                self._alarm_proc.terminate()
+            try:
+                self._alarm_proc = subprocess.Popen(
+                    ['aplay', '-q', wav_path],
+                    stdout=subprocess.DEVNULL,
+                    stderr=subprocess.DEVNULL,
+                )
+            except FileNotFoundError:
+                print('\a', end='', flush=True)
+
+    def _start_repeating(self, wav_path: str) -> None:
+        """Play alarm immediately, then repeat every ~repeat_interval seconds."""
+        self._active_wav = wav_path
+        # Play once immediately in a thread, then schedule repeats
+        threading.Thread(target=self._repeat_loop, args=(wav_path,), daemon=True).start()
+
+    def _repeat_loop(self, wav_path: str) -> None:
+        """Play the alarm, wait repeat_interval seconds, repeat while state unchanged."""
+        while not rospy.is_shutdown() and self._active_wav == wav_path:
+            self._play_audio(wav_path)
+            # Wait for repeat_interval — check every 0.5s so we can stop quickly
+            elapsed = 0.0
+            while elapsed < self.repeat_interval and self._active_wav == wav_path:
+                import time as _time
+                _time.sleep(0.5)
+                elapsed += 0.5
+
+    def _stop_repeating(self) -> None:
+        """Stop the repeat loop and any playing audio."""
+        self._active_wav = None
+        with self._alarm_lock:
+            if self._alarm_proc and self._alarm_proc.poll() is None:
+                self._alarm_proc.terminate()
 
     def publish_state(self, state: str):
         if state == self.last_state:
@@ -108,6 +131,8 @@ class AlarmNode:
 
     def on_features(self, msg: InteractionFeatures):
         if msg.suspicion_score < self.normal_threshold:
+            if self.last_state != 'ALARM_OFF':
+                self._stop_repeating()
             self.publish_state('ALARM_OFF')
 
     def on_event(self, msg: SuspicionEvent):
@@ -115,11 +140,15 @@ class AlarmNode:
         if level == 'high':
             self.publish_state('HIGH_ALARM_ON')
             rospy.logerr('[ALARM ON] High-risk suspicious lifting pattern detected')
-            self._play_audio(self._high_wav)
+            if self._active_wav != self._high_wav:
+                self._stop_repeating()
+                self._start_repeating(self._high_wav)
         elif level == 'warning':
             self.publish_state('WARNING')
             rospy.logwarn('[ALARM WARNING] Suspicious interaction pattern detected')
-            self._play_audio(self._warn_wav)
+            if self._active_wav != self._warn_wav:
+                self._stop_repeating()
+                self._start_repeating(self._warn_wav)
 
 
 def main():
