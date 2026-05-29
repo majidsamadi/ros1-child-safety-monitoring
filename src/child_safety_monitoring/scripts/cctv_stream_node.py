@@ -14,6 +14,8 @@ class CCTVStreamNode:
         self.image_topic = rospy.get_param('~image_topic', '/camera/image_raw')
         self.frame_id = rospy.get_param('~camera_frame_id', 'camera')
         self.publish_rate_hz = float(rospy.get_param('~publish_rate_hz', 15.0))
+        # loop=true makes a video file play repeatedly instead of stopping at the end
+        self.loop = str(rospy.get_param('~loop', 'false')).lower() not in ('false', '0', 'no')
         self.bridge = CvBridge()
         self.pub = rospy.Publisher(self.image_topic, Image, queue_size=5)
 
@@ -21,6 +23,11 @@ class CCTVStreamNode:
         if str(self.stream_url).isdigit():
             return int(self.stream_url)
         return self.stream_url
+
+    def _is_file_source(self):
+        import os
+        src = str(self.stream_url)
+        return os.path.isfile(src)
 
     def run(self):
         rospy.loginfo('Video stream node starting. Publishing to %s', self.image_topic)
@@ -37,6 +44,10 @@ class CCTVStreamNode:
             while not rospy.is_shutdown() and cap.isOpened():
                 ok, frame = cap.read()
                 if not ok:
+                    if self.loop and self._is_file_source():
+                        rospy.loginfo('Video ended. Looping back to start.')
+                        cap.set(cv2.CAP_PROP_POS_FRAMES, 0)
+                        continue
                     rospy.logwarn('Frame read failed. Reconnecting...')
                     break
                 msg = self.bridge.cv2_to_imgmsg(frame, encoding='bgr8')
@@ -45,6 +56,10 @@ class CCTVStreamNode:
                 self.pub.publish(msg)
                 rate.sleep()
             cap.release()
+            # For non-looping file sources, exit cleanly after one pass
+            if self._is_file_source() and not self.loop:
+                rospy.loginfo('Video file finished. Shutting down stream node.')
+                break
 
 
 def main():

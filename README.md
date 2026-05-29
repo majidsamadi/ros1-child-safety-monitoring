@@ -28,13 +28,14 @@ The final stakeholder demo should be done on the **Jupiter robot**, but most dev
 10. [Laptop mode: Windows](#laptop-mode-windows)
 11. [Laptop mode: Linux](#laptop-mode-linux)
 12. [Jupiter robot mode](#jupiter-robot-mode)
-13. [Simulator backup demo](#simulator-backup-demo)
-14. [How to check the pipeline](#how-to-check-the-pipeline)
-15. [Expected demo behavior](#expected-demo-behavior)
-16. [Troubleshooting](#troubleshooting)
-17. [Team workflow](#team-workflow)
-18. [Safety and ethics](#safety-and-ethics)
-19. [Current limitations](#current-limitations)
+13. [Video file demo](#video-file-demo)
+14. [Simulator backup demo](#simulator-backup-demo)
+15. [How to check the pipeline](#how-to-check-the-pipeline)
+16. [Expected demo behavior](#expected-demo-behavior)
+17. [Troubleshooting](#troubleshooting)
+18. [Team workflow](#team-workflow)
+19. [Safety and ethics](#safety-and-ethics)
+20. [Current limitations](#current-limitations)
 
 ---
 
@@ -981,6 +982,161 @@ If you use a browser directly on the robot:
 ```text
 http://localhost:8080/stream?topic=/camera/pose_overlay
 ```
+
+---
+
+# Video file demo
+
+Use this mode to test the full detection pipeline from a local video file instead of a live camera.
+
+This is useful for:
+
+- offline testing without a camera or robot,
+- repeatable debugging with a known video,
+- verifying that detections and alarms fire correctly.
+
+## Step 1: place your video file
+
+Copy your video into the `data/videos/` folder inside the repo:
+
+```text
+data/videos/test_1.mp4
+```
+
+> Video files are excluded from git (see `.gitignore`). Each team member keeps their own test videos locally.
+
+## Step 2: access Docker
+
+```powershell
+docker exec -it ros1_desktop bash
+```
+
+Inside Docker, source the workspace:
+
+```bash
+source /opt/ros/noetic/setup.bash
+source /ros1_ws/devel/setup.bash
+cd /ros1_ws/src/ros1-child-safety-monitoring
+```
+
+## Step 3: run the video file demo
+
+```bash
+roslaunch child_safety_monitoring video_file_demo.launch \
+  video_file:=/ros1_ws/src/ros1-child-safety-monitoring/data/videos/test_1.mp4 \
+  loop:=true
+```
+
+| Argument | Default | Description |
+|---|---|---|
+| `video_file` | `/root/data/videos/test_1.mp4` | Absolute path to the video file inside Docker |
+| `loop` | `false` | Set `true` to replay the video continuously |
+| `pose_model` | `yolo11n-pose.pt` | YOLO pose model to use |
+
+When `loop:=false` (default), the stream node shuts down cleanly after the video ends. The rest of the pipeline keeps running.
+
+## Step 4: view YOLO pose overlay
+
+Open a second Docker terminal:
+
+```bash
+docker exec -it ros1_desktop bash
+source /opt/ros/noetic/setup.bash && source /ros1_ws/devel/setup.bash
+export DISPLAY=:0
+rqt_image_view /camera/pose_overlay
+```
+
+This opens a GUI window showing the video with the YOLO skeleton overlay in real time.
+
+If the window does not appear, try:
+
+```bash
+export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0
+rqt_image_view /camera/pose_overlay
+```
+
+## Expected output
+
+You should see console output like:
+
+```text
+[INFO]  [NORMAL] score=0.05 | No suspicious interaction pattern detected
+[WARN]  [WARNING] score=0.34 | Suspicious interaction pattern detected
+[ERROR] [HIGH ALERT] score=0.47 | Suspicious child-lifting pattern detected
+```
+
+An audio alarm will sound on `WARNING` and `HIGH ALERT` detections (via `aplay`).
+
+## Tuning thresholds for your video
+
+If no alerts fire, the suspicion score may not reach the default thresholds. Edit `config/detection_params.yaml`:
+
+```yaml
+warning_threshold: 0.30    # fire WARNING when score >= this for 0.3s
+high_threshold: 0.45       # fire HIGH ALERT when score >= this for 0.5s
+vit_enabled: false         # disable ViT blending for rule-based-only scoring
+```
+
+Lower values make the system more sensitive. Use `rostopic echo /interaction/features | grep suspicion_score` to see live scores and calibrate.
+
+---
+
+## Debugging the video file pipeline
+
+Open a second Docker terminal for each check:
+
+```bash
+docker exec -it ros1_desktop bash
+source /opt/ros/noetic/setup.bash && source /ros1_ws/devel/setup.bash
+```
+
+**Check 1 — are frames arriving from the video?**
+
+```bash
+rostopic hz /camera/image_raw
+```
+
+Expected: `average rate: ~15.0`
+
+**Check 2 — is YOLO detecting people?**
+
+```bash
+rostopic echo /poses/raw --noarr | grep -E "track_id|size_role|bbox"
+```
+
+Expected: bounding box coordinates updating each frame.
+
+**Check 3 — are suspicion scores computing? (most useful)**
+
+```bash
+rostopic echo /interaction/features | grep -E "suspicion_score|state|smaller_track|larger_track"
+```
+
+Expected: two track IDs present and score rising when people interact.
+
+**Check 4 — is the decision node firing events?**
+
+```bash
+rostopic echo /suspicion_event
+```
+
+Expected: `level: "warning"` or `level: "high"` messages when score exceeds threshold.
+
+**Check 5 — what is the ViT violence score?**
+
+```bash
+rostopic echo /violence/vit_score
+```
+
+Expected: float between 0.0 and 1.0. If near 0.0 and `vit_enabled: true`, the blended score will be pulled down. Set `vit_enabled: false` in `detection_params.yaml` to use rule-based scoring only.
+
+**Check 6 — what is the alarm state?**
+
+```bash
+rostopic echo /alarm/state
+```
+
+Expected: `ALARM_OFF`, `WARNING`, or `HIGH_ALARM_ON`.
 
 ---
 
