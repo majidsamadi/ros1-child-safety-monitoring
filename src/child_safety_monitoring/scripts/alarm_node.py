@@ -70,11 +70,11 @@ class AlarmNode:
         # Pre-generate alarm WAV files once at startup
         self._high_wav = os.path.join(tempfile.gettempdir(), 'csm_high_alarm.wav')
         self._warn_wav = os.path.join(tempfile.gettempdir(), 'csm_warn_alarm.wav')
-        # HIGH ALERT: police siren wail (700 Hz → 1400 Hz sweep, 4 cycles)
+        # HIGH ALERT: police siren wail (700 Hz → 1400 Hz sweep, 8 cycles ≈ 10 seconds)
         _generate_siren_wav(self._high_wav, freq_low=700.0, freq_high=1400.0,
-                            sweep_duration=0.6, cycles=4)
-        # WARNING: fast double-beep pulse
-        _generate_alarm_wav(self._warn_wav, frequency=960.0, duration=0.18, repeats=2)
+                            sweep_duration=0.6, cycles=8)
+        # WARNING: fast double-beep pulse, 4 repeats ≈ 3 seconds
+        _generate_alarm_wav(self._warn_wav, frequency=960.0, duration=0.35, repeats=4)
         rospy.loginfo('Alarm WAV files ready: %s  %s', self._high_wav, self._warn_wav)
 
         self.pub = rospy.Publisher('/alarm/state', String, queue_size=5, latch=True)
