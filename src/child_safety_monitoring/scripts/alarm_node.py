@@ -20,17 +20,44 @@ def _generate_alarm_wav(path: str, frequency: float = 880.0, duration: float = 1
     n_samples = int(sample_rate * duration)
     with wave.open(path, 'w') as wf:
         wf.setnchannels(1)
-        wf.setsampwidth(2)  # 16-bit
+        wf.setsampwidth(2)
         wf.setframerate(sample_rate)
         for _ in range(repeats):
             for i in range(n_samples):
-                # Sine wave with short fade-in/out to avoid clicks
                 t = i / sample_rate
                 envelope = min(1.0, t * 20, (duration - t) * 20)
                 val = int(32767 * envelope * math.sin(2 * math.pi * frequency * t))
                 wf.writeframes(struct.pack('<h', val))
-            # Short silence between beeps
             wf.writeframes(b'\x00\x00' * int(sample_rate * 0.1))
+
+
+def _generate_siren_wav(path: str, freq_low: float = 700.0, freq_high: float = 1400.0,
+                        sweep_duration: float = 0.6, cycles: int = 4,
+                        sample_rate: int = 44100) -> None:
+    """Generate a classic police wail siren (frequency sweep up and down)."""
+    n_sweep = int(sample_rate * sweep_duration)
+    with wave.open(path, 'w') as wf:
+        wf.setnchannels(1)
+        wf.setsampwidth(2)
+        wf.setframerate(sample_rate)
+        phase = 0.0
+        for _ in range(cycles):
+            # Sweep up: freq_low → freq_high
+            for i in range(n_sweep):
+                t = i / n_sweep  # 0.0 → 1.0
+                freq = freq_low + (freq_high - freq_low) * t
+                envelope = min(1.0, t * 10, (1.0 - t) * 10 + 0.5)
+                phase += 2 * math.pi * freq / sample_rate
+                val = int(32767 * min(1.0, envelope) * math.sin(phase))
+                wf.writeframes(struct.pack('<h', val))
+            # Sweep down: freq_high → freq_low
+            for i in range(n_sweep):
+                t = i / n_sweep
+                freq = freq_high - (freq_high - freq_low) * t
+                envelope = min(1.0, t * 10, (1.0 - t) * 10 + 0.5)
+                phase += 2 * math.pi * freq / sample_rate
+                val = int(32767 * min(1.0, envelope) * math.sin(phase))
+                wf.writeframes(struct.pack('<h', val))
 
 
 class AlarmNode:
@@ -43,8 +70,11 @@ class AlarmNode:
         # Pre-generate alarm WAV files once at startup
         self._high_wav = os.path.join(tempfile.gettempdir(), 'csm_high_alarm.wav')
         self._warn_wav = os.path.join(tempfile.gettempdir(), 'csm_warn_alarm.wav')
-        _generate_alarm_wav(self._high_wav, frequency=1100.0, duration=0.8, repeats=4)
-        _generate_alarm_wav(self._warn_wav, frequency=660.0, duration=0.6, repeats=2)
+        # HIGH ALERT: police siren wail (700 Hz → 1400 Hz sweep, 4 cycles)
+        _generate_siren_wav(self._high_wav, freq_low=700.0, freq_high=1400.0,
+                            sweep_duration=0.6, cycles=4)
+        # WARNING: fast double-beep pulse
+        _generate_alarm_wav(self._warn_wav, frequency=960.0, duration=0.18, repeats=2)
         rospy.loginfo('Alarm WAV files ready: %s  %s', self._high_wav, self._warn_wav)
 
         self.pub = rospy.Publisher('/alarm/state', String, queue_size=5, latch=True)
