@@ -1,0 +1,5544 @@
+header: 
+  seq: 2526
+  stamp: 
+    secs: 1780376564
+    nsecs: 454103946
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8585457801818848
+wrap_score: 0.7363197207450867
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.16735698282718658
+state: "observing"
+---
+header: 
+  seq: 2527
+  stamp: 
+    secs: 1780376564
+    nsecs: 587928056
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8603085279464722
+wrap_score: 0.7520442605018616
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.16942188143730164
+state: "observing"
+---
+header: 
+  seq: 2528
+  stamp: 
+    secs: 1780376564
+    nsecs: 654487848
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8519443273544312
+wrap_score: 0.7714977264404297
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.1737339347600937
+state: "observing"
+---
+header: 
+  seq: 2529
+  stamp: 
+    secs: 1780376564
+    nsecs: 787612199
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8435955047607422
+wrap_score: 0.7764609456062317
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.1758698970079422
+state: "observing"
+---
+header: 
+  seq: 2530
+  stamp: 
+    secs: 1780376564
+    nsecs: 854192495
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8373684883117676
+wrap_score: 0.7913809418678284
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.1791457235813141
+state: "observing"
+---
+header: 
+  seq: 2531
+  stamp: 
+    secs: 1780376564
+    nsecs: 921132087
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8289239406585693
+wrap_score: 0.7830837368965149
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.17930856347084045
+state: "observing"
+---
+header: 
+  seq: 2532
+  stamp: 
+    secs: 1780376564
+    nsecs: 991886377
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8200013637542725
+wrap_score: 0.7793764472007751
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.18023957312107086
+state: "observing"
+---
+header: 
+  seq: 2533
+  stamp: 
+    secs: 1780376565
+    nsecs: 120953083
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8307008743286133
+wrap_score: 0.7740795612335205
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.17766177654266357
+state: "observing"
+---
+header: 
+  seq: 2534
+  stamp: 
+    secs: 1780376565
+    nsecs: 254229545
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8208670616149902
+wrap_score: 0.7561354041099548
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.1766091287136078
+state: "observing"
+---
+header: 
+  seq: 2535
+  stamp: 
+    secs: 1780376565
+    nsecs: 320521354
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.825656771659851
+wrap_score: 0.7797884941101074
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.1793588101863861
+state: "observing"
+---
+header: 
+  seq: 2536
+  stamp: 
+    secs: 1780376565
+    nsecs: 388943433
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8249865770339966
+wrap_score: 0.7879494428634644
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.18069465458393097
+state: "observing"
+---
+header: 
+  seq: 2537
+  stamp: 
+    secs: 1780376565
+    nsecs: 520853519
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8147199153900146
+wrap_score: 0.7749344110488892
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.18045352399349213
+state: "observing"
+---
+header: 
+  seq: 2538
+  stamp: 
+    secs: 1780376565
+    nsecs: 589221239
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8113601207733154
+wrap_score: 0.772354006767273
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.18062640726566315
+state: "observing"
+---
+header: 
+  seq: 2539
+  stamp: 
+    secs: 1780376565
+    nsecs: 721091985
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8097742795944214
+wrap_score: 0.7815967798233032
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.1822771430015564
+state: "observing"
+---
+header: 
+  seq: 2540
+  stamp: 
+    secs: 1780376565
+    nsecs: 790955305
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8091238737106323
+wrap_score: 0.792950451374054
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.1840885877609253
+state: "observing"
+---
+header: 
+  seq: 2541
+  stamp: 
+    secs: 1780376565
+    nsecs: 920952320
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.7997386455535889
+wrap_score: 0.805327832698822
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.18750940263271332
+state: "observing"
+---
+header: 
+  seq: 2542
+  stamp: 
+    secs: 1780376565
+    nsecs: 987100839
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.815145492553711
+wrap_score: 0.7917153239250183
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.18289972841739655
+state: "observing"
+---
+header: 
+  seq: 2543
+  stamp: 
+    secs: 1780376566
+    nsecs:  53946733
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.815907597541809
+wrap_score: 0.7891325354576111
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.18238528072834015
+state: "observing"
+---
+header: 
+  seq: 2544
+  stamp: 
+    secs: 1780376566
+    nsecs: 187894344
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8055832386016846
+wrap_score: 0.7977069616317749
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.18539217114448547
+state: "observing"
+---
+header: 
+  seq: 2545
+  stamp: 
+    secs: 1780376566
+    nsecs: 253835678
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.7936041355133057
+wrap_score: 0.7917787432670593
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.1864994615316391
+state: "observing"
+---
+header: 
+  seq: 2546
+  stamp: 
+    secs: 1780376566
+    nsecs: 321370840
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.7901536226272583
+wrap_score: 0.8033047318458557
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.18880343437194824
+state: "observing"
+---
+header: 
+  seq: 2547
+  stamp: 
+    secs: 1780376566
+    nsecs: 454267740
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8121699094772339
+wrap_score: 0.7910849452018738
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.18330109119415283
+state: "observing"
+---
+header: 
+  seq: 2548
+  stamp: 
+    secs: 1780376566
+    nsecs: 521301269
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8289116621017456
+wrap_score: 0.7936475276947021
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.18089517951011658
+state: "observing"
+---
+header: 
+  seq: 2549
+  stamp: 
+    secs: 1780376566
+    nsecs: 654367923
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8491966724395752
+wrap_score: 0.7805474400520325
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.17554934322834015
+state: "observing"
+---
+header: 
+  seq: 2550
+  stamp: 
+    secs: 1780376566
+    nsecs: 720984458
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8471733331680298
+wrap_score: 0.7691158652305603
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.1741718202829361
+state: "observing"
+---
+header: 
+  seq: 2551
+  stamp: 
+    secs: 1780376566
+    nsecs: 787930727
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8492755889892578
+wrap_score: 0.7664946913719177
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.1734282672405243
+state: "observing"
+---
+header: 
+  seq: 2552
+  stamp: 
+    secs: 1780376566
+    nsecs: 921141386
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8855831623077393
+wrap_score: 0.7523919343948364
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.16526159644126892
+state: "observing"
+---
+header: 
+  seq: 2553
+  stamp: 
+    secs: 1780376566
+    nsecs: 987587928
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8965575695037842
+wrap_score: 0.7540611624717712
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.16368290781974792
+state: "observing"
+---
+header: 
+  seq: 2554
+  stamp: 
+    secs: 1780376567
+    nsecs: 120721101
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8912996053695679
+wrap_score: 0.7541266679763794
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.16456906497478485
+state: "observing"
+---
+header: 
+  seq: 2555
+  stamp: 
+    secs: 1780376567
+    nsecs: 188114643
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.882404088973999
+wrap_score: 0.7567968368530273
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.16645218431949615
+state: "observing"
+---
+header: 
+  seq: 2556
+  stamp: 
+    secs: 1780376567
+    nsecs: 321337461
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8830134868621826
+wrap_score: 0.7480764985084534
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.16504256427288055
+state: "observing"
+---
+header: 
+  seq: 2557
+  stamp: 
+    secs: 1780376567
+    nsecs: 720591783
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8691648244857788
+wrap_score: 0.7348726987838745
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.16537010669708252
+state: "observing"
+---
+header: 
+  seq: 2558
+  stamp: 
+    secs: 1780376567
+    nsecs: 854463577
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8644909858703613
+wrap_score: 0.7567948698997498
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.16943740844726562
+state: "observing"
+---
+header: 
+  seq: 2559
+  stamp: 
+    secs: 1780376567
+    nsecs: 987367630
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8390454053878784
+wrap_score: 0.7729712724685669
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.17610479891300201
+state: "observing"
+---
+header: 
+  seq: 2560
+  stamp: 
+    secs: 1780376568
+    nsecs:  54259061
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8458281755447388
+wrap_score: 0.759275496006012
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.17291997373104095
+state: "observing"
+---
+header: 
+  seq: 2561
+  stamp: 
+    secs: 1780376568
+    nsecs: 121300697
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.852299690246582
+wrap_score: 0.7617906928062439
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.17221865057945251
+state: "observing"
+---
+header: 
+  seq: 2562
+  stamp: 
+    secs: 1780376568
+    nsecs: 189356088
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8242558240890503
+wrap_score: 0.7499815821647644
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.1751212775707245
+state: "observing"
+---
+header: 
+  seq: 2563
+  stamp: 
+    secs: 1780376568
+    nsecs: 322252750
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8333156108856201
+wrap_score: 0.7589341998100281
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.17495419085025787
+state: "observing"
+---
+header: 
+  seq: 2564
+  stamp: 
+    secs: 1780376568
+    nsecs: 387737274
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8306686878204346
+wrap_score: 0.7707833051681519
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.1771727055311203
+state: "observing"
+---
+header: 
+  seq: 2565
+  stamp: 
+    secs: 1780376568
+    nsecs: 454327821
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.840562343597412
+wrap_score: 0.7963166832923889
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.1793537735939026
+state: "observing"
+---
+header: 
+  seq: 2566
+  stamp: 
+    secs: 1780376568
+    nsecs: 588654994
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8510335683822632
+wrap_score: 0.7846733927726746
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.17586207389831543
+state: "observing"
+---
+header: 
+  seq: 2567
+  stamp: 
+    secs: 1780376568
+    nsecs: 654053449
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8455754518508911
+wrap_score: 0.7848321199417114
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.1767955720424652
+state: "observing"
+---
+header: 
+  seq: 2568
+  stamp: 
+    secs: 1780376568
+    nsecs: 721608877
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8121763467788696
+wrap_score: 0.8278894424438477
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.18882068991661072
+state: "observing"
+---
+header: 
+  seq: 2569
+  stamp: 
+    secs: 1780376568
+    nsecs: 853961467
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.7685778141021729
+wrap_score: 0.8538334965705872
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.19997872412204742
+state: "observing"
+---
+header: 
+  seq: 2570
+  stamp: 
+    secs: 1780376568
+    nsecs: 922278881
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8126540184020996
+wrap_score: 0.8527427315711975
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.19246909022331238
+state: "observing"
+---
+header: 
+  seq: 2571
+  stamp: 
+    secs: 1780376568
+    nsecs: 987520456
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.7888787984848022
+wrap_score: 0.848475992679596
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.1957916021347046
+state: "observing"
+---
+header: 
+  seq: 2572
+  stamp: 
+    secs: 1780376569
+    nsecs:  54188728
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.7669634819030762
+wrap_score: 0.8680180311203003
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.20237545669078827
+state: "observing"
+---
+header: 
+  seq: 2573
+  stamp: 
+    secs: 1780376569
+    nsecs: 123135328
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.7551285028457642
+wrap_score: 0.8438175916671753
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.20071789622306824
+state: "observing"
+---
+header: 
+  seq: 2574
+  stamp: 
+    secs: 1780376569
+    nsecs: 188193559
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.73763108253479
+wrap_score: 0.8513777256011963
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.20476815104484558
+state: "observing"
+---
+header: 
+  seq: 2575
+  stamp: 
+    secs: 1780376569
+    nsecs: 257045745
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.7539561986923218
+wrap_score: 0.821168065071106
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.1975158452987671
+state: "observing"
+---
+header: 
+  seq: 2576
+  stamp: 
+    secs: 1780376569
+    nsecs: 387642383
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.7721285820007324
+wrap_score: 0.808434247970581
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.1925770491361618
+state: "observing"
+---
+header: 
+  seq: 2577
+  stamp: 
+    secs: 1780376569
+    nsecs: 454454183
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.7789896726608276
+wrap_score: 0.8212502002716064
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.19335591793060303
+state: "observing"
+---
+header: 
+  seq: 2578
+  stamp: 
+    secs: 1780376569
+    nsecs: 521098613
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8287246227264404
+wrap_score: 0.7553465366363525
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.17518119513988495
+state: "observing"
+---
+header: 
+  seq: 2579
+  stamp: 
+    secs: 1780376569
+    nsecs: 587901592
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.7838084697723389
+wrap_score: 0.7949123382568359
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.18860211968421936
+state: "observing"
+---
+header: 
+  seq: 2580
+  stamp: 
+    secs: 1780376569
+    nsecs: 656404972
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8119014501571655
+wrap_score: 0.776181161403656
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.18111026287078857
+state: "observing"
+---
+header: 
+  seq: 2581
+  stamp: 
+    secs: 1780376569
+    nsecs: 723292589
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.7982317209243774
+wrap_score: 0.7684983611106873
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.18223613500595093
+state: "observing"
+---
+header: 
+  seq: 2582
+  stamp: 
+    secs: 1780376569
+    nsecs: 788022041
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.803532361984253
+wrap_score: 0.755347490310669
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.17938007414340973
+state: "observing"
+---
+header: 
+  seq: 2583
+  stamp: 
+    secs: 1780376569
+    nsecs: 920998096
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8235739469528198
+wrap_score: 0.7764232158660889
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.1792011559009552
+state: "observing"
+---
+header: 
+  seq: 2584
+  stamp: 
+    secs: 1780376569
+    nsecs: 987667083
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8244256973266602
+wrap_score: 0.7604227066040039
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.17665912210941315
+state: "observing"
+---
+header: 
+  seq: 2585
+  stamp: 
+    secs: 1780376570
+    nsecs:  56365251
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8308734893798828
+wrap_score: 0.7503663897514343
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.17407605051994324
+state: "observing"
+---
+header: 
+  seq: 2586
+  stamp: 
+    secs: 1780376570
+    nsecs: 121363162
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8337584733963013
+wrap_score: 0.760233461856842
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.17507527768611908
+state: "observing"
+---
+header: 
+  seq: 2587
+  stamp: 
+    secs: 1780376570
+    nsecs: 189197301
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8118919134140015
+wrap_score: 0.7507324814796448
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.1772945672273636
+state: "observing"
+---
+header: 
+  seq: 2588
+  stamp: 
+    secs: 1780376570
+    nsecs: 322655916
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8133398294448853
+wrap_score: 0.7502269744873047
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.17697741091251373
+state: "observing"
+---
+header: 
+  seq: 2589
+  stamp: 
+    secs: 1780376570
+    nsecs: 387789249
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8047938346862793
+wrap_score: 0.7633383870124817
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.18036845326423645
+state: "observing"
+---
+header: 
+  seq: 2590
+  stamp: 
+    secs: 1780376570
+    nsecs: 457165718
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.7945120334625244
+wrap_score: 0.7778684496879578
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.18426160514354706
+state: "observing"
+---
+header: 
+  seq: 2591
+  stamp: 
+    secs: 1780376570
+    nsecs: 522495746
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8019323348999023
+wrap_score: 0.7778376936912537
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.18302026391029358
+state: "observing"
+---
+header: 
+  seq: 2592
+  stamp: 
+    secs: 1780376570
+    nsecs: 587620496
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.7909612655639648
+wrap_score: 0.7742274403572083
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.1843072474002838
+state: "observing"
+---
+header: 
+  seq: 2593
+  stamp: 
+    secs: 1780376570
+    nsecs: 654021739
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.805912971496582
+wrap_score: 0.7832608222961426
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.18317030370235443
+state: "observing"
+---
+header: 
+  seq: 2594
+  stamp: 
+    secs: 1780376570
+    nsecs: 787126302
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8190653324127197
+wrap_score: 0.779863715171814
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.18046867847442627
+state: "observing"
+---
+header: 
+  seq: 2595
+  stamp: 
+    secs: 1780376570
+    nsecs: 854192972
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8074232339859009
+wrap_score: 0.7816707491874695
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.18268008530139923
+state: "observing"
+---
+header: 
+  seq: 2596
+  stamp: 
+    secs: 1780376570
+    nsecs: 920928001
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8093633651733398
+wrap_score: 0.7756955027580261
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.1814604252576828
+state: "observing"
+---
+header: 
+  seq: 2597
+  stamp: 
+    secs: 1780376570
+    nsecs: 987921714
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8143504858016968
+wrap_score: 0.770616352558136
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.17986737191677094
+state: "observing"
+---
+header: 
+  seq: 2598
+  stamp: 
+    secs: 1780376571
+    nsecs:  56006908
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8006852865219116
+wrap_score: 0.772294819355011
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.18239668011665344
+state: "observing"
+---
+header: 
+  seq: 2599
+  stamp: 
+    secs: 1780376571
+    nsecs: 126662254
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.7750667333602905
+wrap_score: 0.7840448021888733
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.18842892348766327
+state: "observing"
+---
+header: 
+  seq: 2600
+  stamp: 
+    secs: 1780376571
+    nsecs: 257632493
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8276950120925903
+wrap_score: 0.7921640276908875
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.18087542057037354
+state: "observing"
+---
+header: 
+  seq: 2601
+  stamp: 
+    secs: 1780376571
+    nsecs: 323707342
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8360693454742432
+wrap_score: 0.7748631834983826
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.17688457667827606
+state: "observing"
+---
+header: 
+  seq: 2602
+  stamp: 
+    secs: 1780376571
+    nsecs: 454430580
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8261598348617554
+wrap_score: 0.7799689173698425
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.17930203676223755
+state: "observing"
+---
+header: 
+  seq: 2603
+  stamp: 
+    secs: 1780376571
+    nsecs: 523133516
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8219764232635498
+wrap_score: 0.784605860710144
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.1806948035955429
+state: "observing"
+---
+header: 
+  seq: 2604
+  stamp: 
+    secs: 1780376571
+    nsecs: 587929248
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8230910301208496
+wrap_score: 0.7828940153121948
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.18025225400924683
+state: "observing"
+---
+header: 
+  seq: 2605
+  stamp: 
+    secs: 1780376571
+    nsecs: 721127271
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8089736700057983
+wrap_score: 0.7853476405143738
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.18297319114208221
+state: "observing"
+---
+header: 
+  seq: 2606
+  stamp: 
+    secs: 1780376571
+    nsecs: 787532567
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8311675786972046
+wrap_score: 0.7837715744972229
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.17903779447078705
+state: "observing"
+---
+header: 
+  seq: 2607
+  stamp: 
+    secs: 1780376571
+    nsecs: 920939445
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8412036895751953
+wrap_score: 0.7762028574943542
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.1762298047542572
+state: "observing"
+---
+header: 
+  seq: 2608
+  stamp: 
+    secs: 1780376571
+    nsecs: 987174987
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.812057375907898
+wrap_score: 0.7655571699142456
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.17949068546295166
+state: "observing"
+---
+header: 
+  seq: 2609
+  stamp: 
+    secs: 1780376572
+    nsecs: 120456695
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.817376732826233
+wrap_score: 0.7697668671607971
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.179235577583313
+state: "observing"
+---
+header: 
+  seq: 2610
+  stamp: 
+    secs: 1780376572
+    nsecs: 187340974
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.810968041419983
+wrap_score: 0.7807182669639587
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.18194639682769775
+state: "observing"
+---
+header: 
+  seq: 2611
+  stamp: 
+    secs: 1780376572
+    nsecs: 254209280
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8153129816055298
+wrap_score: 0.7793065905570984
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.18101049959659576
+state: "observing"
+---
+header: 
+  seq: 2612
+  stamp: 
+    secs: 1780376572
+    nsecs: 388140916
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8271211385726929
+wrap_score: 0.7651904821395874
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.17692506313323975
+state: "observing"
+---
+header: 
+  seq: 2613
+  stamp: 
+    secs: 1780376572
+    nsecs: 454010963
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8258154392242432
+wrap_score: 0.7820180654525757
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.17966680228710175
+state: "observing"
+---
+header: 
+  seq: 2614
+  stamp: 
+    secs: 1780376572
+    nsecs: 587578535
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.842875599861145
+wrap_score: 0.7547078132629395
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.17272689938545227
+state: "observing"
+---
+header: 
+  seq: 2615
+  stamp: 
+    secs: 1780376572
+    nsecs: 654878139
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.849046230316162
+wrap_score: 0.7678746581077576
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.17367348074913025
+state: "observing"
+---
+header: 
+  seq: 2616
+  stamp: 
+    secs: 1780376572
+    nsecs: 787659406
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8490288257598877
+wrap_score: 0.7888542413711548
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.17682333290576935
+state: "observing"
+---
+header: 
+  seq: 2617
+  stamp: 
+    secs: 1780376572
+    nsecs: 920336246
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8484429121017456
+wrap_score: 0.8170793056488037
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.1811547428369522
+state: "observing"
+---
+header: 
+  seq: 2618
+  stamp: 
+    secs: 1780376572
+    nsecs: 987293481
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.838209867477417
+wrap_score: 0.87848961353302
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.192071795463562
+state: "observing"
+---
+header: 
+  seq: 2619
+  stamp: 
+    secs: 1780376573
+    nsecs:  54194450
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.855596661567688
+wrap_score: 0.8741768598556519
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.18852707743644714
+state: "observing"
+---
+header: 
+  seq: 2620
+  stamp: 
+    secs: 1780376573
+    nsecs: 189794540
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8341838121414185
+wrap_score: 0.8517752289772034
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.18873564898967743
+state: "observing"
+---
+header: 
+  seq: 2621
+  stamp: 
+    secs: 1780376573
+    nsecs: 254081726
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.853034257888794
+wrap_score: 0.8313391804695129
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.1825285106897354
+state: "observing"
+---
+header: 
+  seq: 2622
+  stamp: 
+    secs: 1780376573
+    nsecs: 320719957
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8263617753982544
+wrap_score: 0.8202210068702698
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.18530617654323578
+state: "observing"
+---
+header: 
+  seq: 2623
+  stamp: 
+    secs: 1780376573
+    nsecs: 454242467
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8070435523986816
+wrap_score: 0.7956411838531494
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.1848389208316803
+state: "observing"
+---
+header: 
+  seq: 2624
+  stamp: 
+    secs: 1780376573
+    nsecs: 521342992
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8185385465621948
+wrap_score: 0.7923192977905273
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.18242481350898743
+state: "observing"
+---
+header: 
+  seq: 2625
+  stamp: 
+    secs: 1780376573
+    nsecs: 589798688
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.826125979423523
+wrap_score: 0.8018743395805359
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.1825934797525406
+state: "observing"
+---
+header: 
+  seq: 2626
+  stamp: 
+    secs: 1780376573
+    nsecs: 720848798
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8375710248947144
+wrap_score: 0.8074055910110474
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.1815156787633896
+state: "observing"
+---
+header: 
+  seq: 2627
+  stamp: 
+    secs: 1780376573
+    nsecs: 787270069
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8407707214355469
+wrap_score: 0.7862602472305298
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.17781056463718414
+state: "observing"
+---
+header: 
+  seq: 2628
+  stamp: 
+    secs: 1780376573
+    nsecs: 920705318
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8481642007827759
+wrap_score: 0.7946249842643738
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.17783305048942566
+state: "observing"
+---
+header: 
+  seq: 2629
+  stamp: 
+    secs: 1780376573
+    nsecs: 987756252
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8295152187347412
+wrap_score: 0.7874453663825989
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.17986427247524261
+state: "observing"
+---
+header: 
+  seq: 2630
+  stamp: 
+    secs: 1780376574
+    nsecs: 123517751
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8245524168014526
+wrap_score: 0.7975517511367798
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.1822073608636856
+state: "observing"
+---
+header: 
+  seq: 2631
+  stamp: 
+    secs: 1780376574
+    nsecs: 190029144
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8151131868362427
+wrap_score: 0.8056343793869019
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.1849929690361023
+state: "observing"
+---
+header: 
+  seq: 2632
+  stamp: 
+    secs: 1780376574
+    nsecs: 254437923
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8129868507385254
+wrap_score: 0.8093769550323486
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.1859087347984314
+state: "observing"
+---
+header: 
+  seq: 2633
+  stamp: 
+    secs: 1780376574
+    nsecs: 387985467
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.7910263538360596
+wrap_score: 0.8205194473266602
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.19124019145965576
+state: "observing"
+---
+header: 
+  seq: 2634
+  stamp: 
+    secs: 1780376574
+    nsecs: 453634738
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8036824464797974
+wrap_score: 0.8084315061569214
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.1873176544904709
+state: "observing"
+---
+header: 
+  seq: 2635
+  stamp: 
+    secs: 1780376574
+    nsecs: 520367860
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8081755638122559
+wrap_score: 0.8094821572303772
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.1867263913154602
+state: "observing"
+---
+header: 
+  seq: 2636
+  stamp: 
+    secs: 1780376574
+    nsecs: 654468297
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8037676811218262
+wrap_score: 0.8014872074127197
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.18626180291175842
+state: "observing"
+---
+header: 
+  seq: 2637
+  stamp: 
+    secs: 1780376574
+    nsecs: 721816539
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8125826120376587
+wrap_score: 0.8063823580741882
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.18552692234516144
+state: "observing"
+---
+header: 
+  seq: 2638
+  stamp: 
+    secs: 1780376574
+    nsecs: 855280160
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.7855479717254639
+wrap_score: 0.8192310333251953
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.19195999205112457
+state: "observing"
+---
+header: 
+  seq: 2639
+  stamp: 
+    secs: 1780376574
+    nsecs: 922446966
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.7922905683517456
+wrap_score: 0.8853095769882202
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.200748011469841
+state: "observing"
+---
+header: 
+  seq: 2640
+  stamp: 
+    secs: 1780376574
+    nsecs: 988429784
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.7775180339813232
+wrap_score: 0.8766577839851379
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.20191234350204468
+state: "observing"
+---
+header: 
+  seq: 2641
+  stamp: 
+    secs: 1780376575
+    nsecs: 123591184
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.7971302270889282
+wrap_score: 0.8705460429191589
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.19772686064243317
+state: "observing"
+---
+header: 
+  seq: 2642
+  stamp: 
+    secs: 1780376575
+    nsecs: 189133882
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.7933986186981201
+wrap_score: 0.8284568190574646
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.19203542172908783
+state: "observing"
+---
+header: 
+  seq: 2643
+  stamp: 
+    secs: 1780376575
+    nsecs: 257295131
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8050111532211304
+wrap_score: 0.8011497855186462
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.1860039383172989
+state: "observing"
+---
+header: 
+  seq: 2644
+  stamp: 
+    secs: 1780376575
+    nsecs: 387484788
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8040871620178223
+wrap_score: 0.8126328587532043
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.18788039684295654
+state: "observing"
+---
+header: 
+  seq: 2645
+  stamp: 
+    secs: 1780376575
+    nsecs: 455931901
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.787264108657837
+wrap_score: 0.8137566447257996
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.1908528208732605
+state: "observing"
+---
+header: 
+  seq: 2646
+  stamp: 
+    secs: 1780376575
+    nsecs: 587837219
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.7797894477844238
+wrap_score: 0.8145806193351746
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.19222217798233032
+state: "observing"
+---
+header: 
+  seq: 2647
+  stamp: 
+    secs: 1780376575
+    nsecs: 654249191
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.7792760133743286
+wrap_score: 0.8456618189811707
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.19696994125843048
+state: "observing"
+---
+header: 
+  seq: 2648
+  stamp: 
+    secs: 1780376575
+    nsecs: 787324190
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.7848542928695679
+wrap_score: 0.867255687713623
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.1992793083190918
+state: "observing"
+---
+header: 
+  seq: 2649
+  stamp: 
+    secs: 1780376575
+    nsecs: 854107141
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8141040802001953
+wrap_score: 0.8410693407058716
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.19047638773918152
+state: "observing"
+---
+header: 
+  seq: 2650
+  stamp: 
+    secs: 1780376575
+    nsecs: 987517356
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.7999029159545898
+wrap_score: 0.8499438762664795
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.19417442381381989
+state: "observing"
+---
+header: 
+  seq: 2651
+  stamp: 
+    secs: 1780376576
+    nsecs:  55136203
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8099679946899414
+wrap_score: 0.8237674236297607
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.18857045471668243
+state: "observing"
+---
+header: 
+  seq: 2652
+  stamp: 
+    secs: 1780376576
+    nsecs: 120984554
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.80207359790802
+wrap_score: 0.8241215348243713
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.18993930518627167
+state: "observing"
+---
+header: 
+  seq: 2653
+  stamp: 
+    secs: 1780376576
+    nsecs: 254347801
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.813430905342102
+wrap_score: 0.8543022871017456
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.19257353246212006
+state: "observing"
+---
+header: 
+  seq: 2654
+  stamp: 
+    secs: 1780376576
+    nsecs: 321082115
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8073501586914062
+wrap_score: 0.8122804164886475
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.1872837096452713
+state: "observing"
+---
+header: 
+  seq: 2655
+  stamp: 
+    secs: 1780376576
+    nsecs: 387708902
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8129568099975586
+wrap_score: 0.8287327289581299
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.188817098736763
+state: "observing"
+---
+header: 
+  seq: 2656
+  stamp: 
+    secs: 1780376576
+    nsecs: 520986795
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.7969169616699219
+wrap_score: 0.8345493078231812
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.19236288964748383
+state: "observing"
+---
+header: 
+  seq: 2657
+  stamp: 
+    secs: 1780376576
+    nsecs: 586983442
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.7955726385116577
+wrap_score: 0.8327200412750244
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.1923125684261322
+state: "observing"
+---
+header: 
+  seq: 2658
+  stamp: 
+    secs: 1780376576
+    nsecs: 721879243
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.7929821014404297
+wrap_score: 0.8415537476539612
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.19406938552856445
+state: "observing"
+---
+header: 
+  seq: 2659
+  stamp: 
+    secs: 1780376576
+    nsecs: 787237405
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.804757833480835
+wrap_score: 0.8419458270072937
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.1921655684709549
+state: "observing"
+---
+header: 
+  seq: 2660
+  stamp: 
+    secs: 1780376576
+    nsecs: 854397535
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8060691356658936
+wrap_score: 0.8517214059829712
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.1934133619070053
+state: "observing"
+---
+header: 
+  seq: 2661
+  stamp: 
+    secs: 1780376576
+    nsecs: 989722728
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.791102409362793
+wrap_score: 0.8575205206871033
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.19677768647670746
+state: "observing"
+---
+header: 
+  seq: 2662
+  stamp: 
+    secs: 1780376577
+    nsecs:  54459810
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.7987139225006104
+wrap_score: 0.8212827444076538
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.1900734305381775
+state: "observing"
+---
+header: 
+  seq: 2663
+  stamp: 
+    secs: 1780376577
+    nsecs: 120839357
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8029935359954834
+wrap_score: 0.8365775942802429
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.19165438413619995
+state: "observing"
+---
+header: 
+  seq: 2664
+  stamp: 
+    secs: 1780376577
+    nsecs: 255206584
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8032050132751465
+wrap_score: 0.8191523551940918
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.18900534510612488
+state: "observing"
+---
+header: 
+  seq: 2665
+  stamp: 
+    secs: 1780376577
+    nsecs: 321065187
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.7982823848724365
+wrap_score: 0.8243501782417297
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.19060546159744263
+state: "observing"
+---
+header: 
+  seq: 2666
+  stamp: 
+    secs: 1780376577
+    nsecs: 454413652
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.7896032333374023
+wrap_score: 0.811465322971344
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.19011926651000977
+state: "observing"
+---
+header: 
+  seq: 2667
+  stamp: 
+    secs: 1780376577
+    nsecs: 520928621
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.7767117023468018
+wrap_score: 0.834840714931488
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.1957741528749466
+state: "observing"
+---
+header: 
+  seq: 2668
+  stamp: 
+    secs: 1780376577
+    nsecs: 653944253
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.7876737117767334
+wrap_score: 0.8248823285102844
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.19245341420173645
+state: "observing"
+---
+header: 
+  seq: 2669
+  stamp: 
+    secs: 1780376577
+    nsecs: 721413135
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.7867774963378906
+wrap_score: 0.8126237392425537
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.19076398015022278
+state: "observing"
+---
+header: 
+  seq: 2670
+  stamp: 
+    secs: 1780376577
+    nsecs: 854103565
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.7842744588851929
+wrap_score: 0.8138555884361267
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.19136594235897064
+state: "observing"
+---
+header: 
+  seq: 2671
+  stamp: 
+    secs: 1780376578
+    nsecs: 254199266
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.7946962118148804
+wrap_score: 0.8449345231056213
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.19429080188274384
+state: "observing"
+---
+header: 
+  seq: 2672
+  stamp: 
+    secs: 1780376578
+    nsecs: 587431430
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.7796142101287842
+wrap_score: 0.9017502069473267
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.20532682538032532
+state: "observing"
+---
+header: 
+  seq: 2673
+  stamp: 
+    secs: 1780376578
+    nsecs: 720942497
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.7928980588912964
+wrap_score: 0.843352198600769
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.1943531632423401
+state: "observing"
+---
+header: 
+  seq: 2674
+  stamp: 
+    secs: 1780376578
+    nsecs: 787409305
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.7921713590621948
+wrap_score: 0.8593589067459106
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.19687528908252716
+state: "observing"
+---
+header: 
+  seq: 2675
+  stamp: 
+    secs: 1780376578
+    nsecs: 854882478
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.7712442874908447
+wrap_score: 0.9168724417686462
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.20899014174938202
+state: "observing"
+---
+header: 
+  seq: 2676
+  stamp: 
+    secs: 1780376578
+    nsecs: 921336174
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.7555307149887085
+wrap_score: 0.9099671244621277
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.21057328581809998
+state: "observing"
+---
+header: 
+  seq: 2677
+  stamp: 
+    secs: 1780376579
+    nsecs:  55152177
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.7670108079910278
+wrap_score: 0.9039872288703918
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.2077629566192627
+state: "observing"
+---
+header: 
+  seq: 2678
+  stamp: 
+    secs: 1780376579
+    nsecs: 120583772
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.7634762525558472
+wrap_score: 0.8858451247215271
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.20563071966171265
+state: "observing"
+---
+header: 
+  seq: 2679
+  stamp: 
+    secs: 1780376579
+    nsecs: 187328100
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.756330966949463
+wrap_score: 0.98344486951828
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.22146156430244446
+state: "observing"
+---
+header: 
+  seq: 2680
+  stamp: 
+    secs: 1780376579
+    nsecs: 320766448
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.758517861366272
+wrap_score: 0.8993773460388184
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.20848694443702698
+state: "observing"
+---
+header: 
+  seq: 2681
+  stamp: 
+    secs: 1780376579
+    nsecs: 387524843
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.7652450799942017
+wrap_score: 0.9408057332038879
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.21358001232147217
+state: "observing"
+---
+header: 
+  seq: 2682
+  stamp: 
+    secs: 1780376579
+    nsecs: 455436468
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.7573786973953247
+wrap_score: 0.8963133096694946
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.20821720361709595
+state: "observing"
+---
+header: 
+  seq: 2683
+  stamp: 
+    secs: 1780376579
+    nsecs: 587087631
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.7585431337356567
+wrap_score: 0.9327746629714966
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.21349234879016876
+state: "observing"
+---
+header: 
+  seq: 2684
+  stamp: 
+    secs: 1780376579
+    nsecs: 654283761
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.7613661289215088
+wrap_score: 0.8995697498321533
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.20804110169410706
+state: "observing"
+---
+header: 
+  seq: 2685
+  stamp: 
+    secs: 1780376579
+    nsecs: 720921993
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.7671324014663696
+wrap_score: 0.8680412769317627
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.20235078036785126
+state: "observing"
+---
+header: 
+  seq: 2686
+  stamp: 
+    secs: 1780376579
+    nsecs: 855052232
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.7837927341461182
+wrap_score: 0.8797213435173035
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.20132608711719513
+state: "observing"
+---
+header: 
+  seq: 2687
+  stamp: 
+    secs: 1780376579
+    nsecs: 920716285
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.7886006832122803
+wrap_score: 0.8684665560722351
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.1988365352153778
+state: "observing"
+---
+header: 
+  seq: 2688
+  stamp: 
+    secs: 1780376579
+    nsecs: 987422704
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.7892744541168213
+wrap_score: 0.8974753022193909
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.2030755579471588
+state: "observing"
+---
+header: 
+  seq: 2689
+  stamp: 
+    secs: 1780376580
+    nsecs: 121870279
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.784233570098877
+wrap_score: 0.8462553024291992
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.19623269140720367
+state: "observing"
+---
+header: 
+  seq: 2690
+  stamp: 
+    secs: 1780376580
+    nsecs: 188836097
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.7617281675338745
+wrap_score: 0.8793331980705261
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.20494528114795685
+state: "observing"
+---
+header: 
+  seq: 2691
+  stamp: 
+    secs: 1780376580
+    nsecs: 322041511
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.7835508584976196
+wrap_score: 0.8636889457702637
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.198961541056633
+state: "observing"
+---
+header: 
+  seq: 2692
+  stamp: 
+    secs: 1780376580
+    nsecs: 388091564
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.7717394828796387
+wrap_score: 0.8573196530342102
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.19997470080852509
+state: "observing"
+---
+header: 
+  seq: 2693
+  stamp: 
+    secs: 1780376580
+    nsecs: 454252958
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.7904025316238403
+wrap_score: 0.8630180358886719
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.19771894812583923
+state: "observing"
+---
+header: 
+  seq: 2694
+  stamp: 
+    secs: 1780376580
+    nsecs: 589468479
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.7602335214614868
+wrap_score: 0.867188036441803
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.20337261259555817
+state: "observing"
+---
+header: 
+  seq: 2695
+  stamp: 
+    secs: 1780376580
+    nsecs: 654145956
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.7669892311096191
+wrap_score: 0.8905037045478821
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.20574401319026947
+state: "observing"
+---
+header: 
+  seq: 2696
+  stamp: 
+    secs: 1780376580
+    nsecs: 787641525
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.761777400970459
+wrap_score: 0.9015966057777405
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.20827658474445343
+state: "observing"
+---
+header: 
+  seq: 2697
+  stamp: 
+    secs: 1780376580
+    nsecs: 854034900
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.751412034034729
+wrap_score: 0.8757891654968262
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.20613303780555725
+state: "observing"
+---
+header: 
+  seq: 2698
+  stamp: 
+    secs: 1780376580
+    nsecs: 920986413
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.7718002796173096
+wrap_score: 0.8618456125259399
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.20064346492290497
+state: "observing"
+---
+header: 
+  seq: 2699
+  stamp: 
+    secs: 1780376581
+    nsecs:  54230690
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.7881516218185425
+wrap_score: 0.8556641936302185
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.19699102640151978
+state: "observing"
+---
+header: 
+  seq: 2700
+  stamp: 
+    secs: 1780376581
+    nsecs: 120875120
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.7818199396133423
+wrap_score: 0.8421017527580261
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.19601194560527802
+state: "observing"
+---
+header: 
+  seq: 2701
+  stamp: 
+    secs: 1780376581
+    nsecs: 253859043
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8065049648284912
+wrap_score: 0.8175132870674133
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.18820950388908386
+state: "observing"
+---
+header: 
+  seq: 2702
+  stamp: 
+    secs: 1780376581
+    nsecs: 320801019
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.7784733772277832
+wrap_score: 0.8183576464653015
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.19300806522369385
+state: "observing"
+---
+header: 
+  seq: 2703
+  stamp: 
+    secs: 1780376581
+    nsecs: 454149961
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.7953457832336426
+wrap_score: 0.817657470703125
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.19009098410606384
+state: "observing"
+---
+header: 
+  seq: 2704
+  stamp: 
+    secs: 1780376581
+    nsecs: 520698547
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.7984520196914673
+wrap_score: 0.8182713389396667
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.18966536223888397
+state: "observing"
+---
+header: 
+  seq: 2705
+  stamp: 
+    secs: 1780376581
+    nsecs: 657656669
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.7941550016403198
+wrap_score: 0.8276998400688171
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.19179581105709076
+state: "observing"
+---
+header: 
+  seq: 2706
+  stamp: 
+    secs: 1780376581
+    nsecs: 722958564
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8021292686462402
+wrap_score: 0.8351904153823853
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.19159035384655
+state: "observing"
+---
+header: 
+  seq: 2707
+  stamp: 
+    secs: 1780376581
+    nsecs: 854509592
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8116275072097778
+wrap_score: 0.828162670135498
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.18895314633846283
+state: "observing"
+---
+header: 
+  seq: 2708
+  stamp: 
+    secs: 1780376581
+    nsecs: 921211242
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.801406741142273
+wrap_score: 0.799793541431427
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.18640124797821045
+state: "observing"
+---
+header: 
+  seq: 2709
+  stamp: 
+    secs: 1780376581
+    nsecs: 987385511
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.803979754447937
+wrap_score: 0.8213451504707336
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.18920515477657318
+state: "observing"
+---
+header: 
+  seq: 2710
+  stamp: 
+    secs: 1780376582
+    nsecs: 121344327
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8028651475906372
+wrap_score: 0.8503685593605042
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.19374442100524902
+state: "observing"
+---
+header: 
+  seq: 2711
+  stamp: 
+    secs: 1780376582
+    nsecs: 190964698
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8066256046295166
+wrap_score: 0.8356151580810547
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.1909046769142151
+state: "observing"
+---
+header: 
+  seq: 2712
+  stamp: 
+    secs: 1780376582
+    nsecs: 320564985
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.800446629524231
+wrap_score: 0.8186165690422058
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.18938471376895905
+state: "observing"
+---
+header: 
+  seq: 2713
+  stamp: 
+    secs: 1780376582
+    nsecs: 387572765
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8117700815200806
+wrap_score: 0.8286406993865967
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.18900108337402344
+state: "observing"
+---
+header: 
+  seq: 2714
+  stamp: 
+    secs: 1780376582
+    nsecs: 523245811
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8015505075454712
+wrap_score: 0.8739251494407654
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.19749702513217926
+state: "observing"
+---
+header: 
+  seq: 2715
+  stamp: 
+    secs: 1780376582
+    nsecs: 587704420
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.81721830368042
+wrap_score: 0.8597458004951477
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.19275881350040436
+state: "observing"
+---
+header: 
+  seq: 2716
+  stamp: 
+    secs: 1780376582
+    nsecs: 654185533
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8001962900161743
+wrap_score: 0.8225921988487244
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.1900227963924408
+state: "observing"
+---
+header: 
+  seq: 2717
+  stamp: 
+    secs: 1780376582
+    nsecs: 788171529
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.7786343097686768
+wrap_score: 0.8390886187553406
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.1960909217596054
+state: "observing"
+---
+header: 
+  seq: 2718
+  stamp: 
+    secs: 1780376582
+    nsecs: 854151010
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.7685803174972534
+wrap_score: 0.8392258286476135
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.19778715074062347
+state: "observing"
+---
+header: 
+  seq: 2719
+  stamp: 
+    secs: 1780376582
+    nsecs: 988636732
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.761390209197998
+wrap_score: 0.8432580232620239
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.19959032535552979
+state: "observing"
+---
+header: 
+  seq: 2720
+  stamp: 
+    secs: 1780376583
+    nsecs:  54890155
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.757986307144165
+wrap_score: 0.8546549081802368
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.20186719298362732
+state: "observing"
+---
+header: 
+  seq: 2721
+  stamp: 
+    secs: 1780376583
+    nsecs: 122941732
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.770814061164856
+wrap_score: 0.8781415224075317
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.20325221121311188
+state: "observing"
+---
+header: 
+  seq: 2722
+  stamp: 
+    secs: 1780376583
+    nsecs: 254278421
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.776398777961731
+wrap_score: 0.877152681350708
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.202173113822937
+state: "observing"
+---
+header: 
+  seq: 2723
+  stamp: 
+    secs: 1780376583
+    nsecs: 390271186
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.7855737209320068
+wrap_score: 0.8815523386001587
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.20130391418933868
+state: "observing"
+---
+header: 
+  seq: 2724
+  stamp: 
+    secs: 1780376583
+    nsecs: 453819990
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.7737088203430176
+wrap_score: 0.8655809164047241
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.20088566839694977
+state: "observing"
+---
+header: 
+  seq: 2725
+  stamp: 
+    secs: 1780376583
+    nsecs: 520315408
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.7800261974334717
+wrap_score: 0.8578317761421204
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.1986703872680664
+state: "observing"
+---
+header: 
+  seq: 2726
+  stamp: 
+    secs: 1780376583
+    nsecs: 654840469
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.7612981796264648
+wrap_score: 0.8381199836730957
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.19883495569229126
+state: "observing"
+---
+header: 
+  seq: 2727
+  stamp: 
+    secs: 1780376583
+    nsecs: 720726966
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.7756519317626953
+wrap_score: 0.855782151222229
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.19909198582172394
+state: "observing"
+---
+header: 
+  seq: 2728
+  stamp: 
+    secs: 1780376583
+    nsecs: 854997158
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.7555519342422485
+wrap_score: 0.8844695687294006
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.20674511790275574
+state: "observing"
+---
+header: 
+  seq: 2729
+  stamp: 
+    secs: 1780376583
+    nsecs: 920326948
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.7586003541946411
+wrap_score: 0.8660098910331726
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.20346809923648834
+state: "observing"
+---
+header: 
+  seq: 2730
+  stamp: 
+    secs: 1780376583
+    nsecs: 987168788
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.7565534114837646
+wrap_score: 0.8716786503791809
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.204659566283226
+state: "observing"
+---
+header: 
+  seq: 2731
+  stamp: 
+    secs: 1780376584
+    nsecs: 121090412
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8061946630477905
+wrap_score: 0.8140332102775574
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.18773920834064484
+state: "observing"
+---
+header: 
+  seq: 2732
+  stamp: 
+    secs: 1780376584
+    nsecs: 187779188
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8117481470108032
+wrap_score: 0.7923169732093811
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.1835561841726303
+state: "observing"
+---
+header: 
+  seq: 2733
+  stamp: 
+    secs: 1780376584
+    nsecs: 322987079
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.7946516275405884
+wrap_score: 0.7911108732223511
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.18622468411922455
+state: "observing"
+---
+header: 
+  seq: 2734
+  stamp: 
+    secs: 1780376584
+    nsecs: 387672424
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.7886451482772827
+wrap_score: 0.8064117431640625
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.18952089548110962
+state: "observing"
+---
+header: 
+  seq: 2735
+  stamp: 
+    secs: 1780376584
+    nsecs: 520932435
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.7692625522613525
+wrap_score: 0.808278501033783
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.19303134083747864
+state: "observing"
+---
+header: 
+  seq: 2736
+  stamp: 
+    secs: 1780376584
+    nsecs: 587583780
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.7771419286727905
+wrap_score: 0.824319064617157
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.19412420690059662
+state: "observing"
+---
+header: 
+  seq: 2737
+  stamp: 
+    secs: 1780376584
+    nsecs: 654400348
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.7715630531311035
+wrap_score: 0.8267478346824646
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.1954183280467987
+state: "observing"
+---
+header: 
+  seq: 2738
+  stamp: 
+    secs: 1780376584
+    nsecs: 787762641
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8006170988082886
+wrap_score: 0.8302154541015625
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.19109612703323364
+state: "observing"
+---
+header: 
+  seq: 2739
+  stamp: 
+    secs: 1780376584
+    nsecs: 853951692
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8042874336242676
+wrap_score: 0.8615046143531799
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.19517779350280762
+state: "observing"
+---
+header: 
+  seq: 2740
+  stamp: 
+    secs: 1780376584
+    nsecs: 987529993
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8094050884246826
+wrap_score: 0.8395949602127075
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.19103838503360748
+state: "observing"
+---
+header: 
+  seq: 2741
+  stamp: 
+    secs: 1780376585
+    nsecs:  54359197
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8117512464523315
+wrap_score: 0.816443681716919
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.18717466294765472
+state: "observing"
+---
+header: 
+  seq: 2742
+  stamp: 
+    secs: 1780376585
+    nsecs: 120898962
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8156241178512573
+wrap_score: 0.8050251603126526
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.18481643497943878
+state: "observing"
+---
+header: 
+  seq: 2743
+  stamp: 
+    secs: 1780376585
+    nsecs: 254285097
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8475589752197266
+wrap_score: 0.8034359812736511
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.17925556004047394
+state: "observing"
+---
+header: 
+  seq: 2744
+  stamp: 
+    secs: 1780376585
+    nsecs: 321472883
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8483282327651978
+wrap_score: 0.9106605648994446
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.19521105289459229
+state: "observing"
+---
+header: 
+  seq: 2745
+  stamp: 
+    secs: 1780376585
+    nsecs: 455566167
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8523266315460205
+wrap_score: 0.9393449425697327
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.19884730875492096
+state: "observing"
+---
+header: 
+  seq: 2746
+  stamp: 
+    secs: 1780376585
+    nsecs: 522356748
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8782063722610474
+wrap_score: 0.9071215987205505
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.18970051407814026
+state: "observing"
+---
+header: 
+  seq: 2747
+  stamp: 
+    secs: 1780376585
+    nsecs: 589349269
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8599987030029297
+wrap_score: 0.9025293588638306
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.19204629957675934
+state: "observing"
+---
+header: 
+  seq: 2748
+  stamp: 
+    secs: 1780376585
+    nsecs: 720947504
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.857899785041809
+wrap_score: 0.7917010188102722
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.17577184736728668
+state: "observing"
+---
+header: 
+  seq: 2749
+  stamp: 
+    secs: 1780376585
+    nsecs: 787750959
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.839318871498108
+wrap_score: 0.8336809277534485
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.1851656585931778
+state: "observing"
+---
+header: 
+  seq: 2750
+  stamp: 
+    secs: 1780376585
+    nsecs: 921185731
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8740891218185425
+wrap_score: 0.8021122217178345
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.17463530600070953
+state: "observing"
+---
+header: 
+  seq: 2751
+  stamp: 
+    secs: 1780376585
+    nsecs: 987638473
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8442625999450684
+wrap_score: 0.838585376739502
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.18507736921310425
+state: "observing"
+---
+header: 
+  seq: 2752
+  stamp: 
+    secs: 1780376586
+    nsecs: 123574018
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8664584159851074
+wrap_score: 0.7775631546974182
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.1722247451543808
+state: "observing"
+---
+header: 
+  seq: 2753
+  stamp: 
+    secs: 1780376586
+    nsecs: 187659025
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8615541458129883
+wrap_score: 0.7938897609710693
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.1754911094903946
+state: "observing"
+---
+header: 
+  seq: 2754
+  stamp: 
+    secs: 1780376586
+    nsecs: 321396589
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8879389762878418
+wrap_score: 0.7801222205162048
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.16902849078178406
+state: "observing"
+---
+header: 
+  seq: 2755
+  stamp: 
+    secs: 1780376586
+    nsecs: 387671470
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8674958944320679
+wrap_score: 0.8027784824371338
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.17583413422107697
+state: "observing"
+---
+header: 
+  seq: 2756
+  stamp: 
+    secs: 1780376586
+    nsecs: 454370498
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8902839422225952
+wrap_score: 0.7787343859672546
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.16842949390411377
+state: "observing"
+---
+header: 
+  seq: 2757
+  stamp: 
+    secs: 1780376586
+    nsecs: 588393211
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8436498641967773
+wrap_score: 0.7793682217597961
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.1762969195842743
+state: "observing"
+---
+header: 
+  seq: 2758
+  stamp: 
+    secs: 1780376586
+    nsecs: 654655694
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8580539226531982
+wrap_score: 0.7753298878669739
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.17329050600528717
+state: "observing"
+---
+header: 
+  seq: 2759
+  stamp: 
+    secs: 1780376586
+    nsecs: 788188934
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8457739353179932
+wrap_score: 0.7713035941123962
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.1747332066297531
+state: "observing"
+---
+header: 
+  seq: 2760
+  stamp: 
+    secs: 1780376586
+    nsecs: 858768463
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8350708484649658
+wrap_score: 0.7819905877113342
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.17812010645866394
+state: "observing"
+---
+header: 
+  seq: 2761
+  stamp: 
+    secs: 1780376586
+    nsecs: 987031221
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8286051750183105
+wrap_score: 0.7832273244857788
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.17938324809074402
+state: "observing"
+---
+header: 
+  seq: 2762
+  stamp: 
+    secs: 1780376587
+    nsecs:  53782463
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.823573112487793
+wrap_score: 0.8085451126098633
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.18401958048343658
+state: "observing"
+---
+header: 
+  seq: 2763
+  stamp: 
+    secs: 1780376587
+    nsecs: 121190309
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8184388875961304
+wrap_score: 0.8142324090003967
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.18572838604450226
+state: "observing"
+---
+header: 
+  seq: 2764
+  stamp: 
+    secs: 1780376587
+    nsecs: 257296323
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8141179084777832
+wrap_score: 0.7971206307411194
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.18388178944587708
+state: "observing"
+---
+header: 
+  seq: 2765
+  stamp: 
+    secs: 1780376587
+    nsecs: 321265697
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.804390549659729
+wrap_score: 0.8135209679603577
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.18796305358409882
+state: "observing"
+---
+header: 
+  seq: 2766
+  stamp: 
+    secs: 1780376587
+    nsecs: 454416036
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8144117593765259
+wrap_score: 0.8252995014190674
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.18805962800979614
+state: "observing"
+---
+header: 
+  seq: 2767
+  stamp: 
+    secs: 1780376587
+    nsecs: 521598815
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.822176456451416
+wrap_score: 0.8177603483200073
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.18563464283943176
+state: "observing"
+---
+header: 
+  seq: 2768
+  stamp: 
+    secs: 1780376587
+    nsecs: 588045597
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.834659457206726
+wrap_score: 0.8037205338478088
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.18144816160202026
+state: "observing"
+---
+header: 
+  seq: 2769
+  stamp: 
+    secs: 1780376587
+    nsecs: 721784830
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8199824094772339
+wrap_score: 0.8217475414276123
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.18659840524196625
+state: "observing"
+---
+header: 
+  seq: 2770
+  stamp: 
+    secs: 1780376587
+    nsecs: 791429281
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.817550539970398
+wrap_score: 0.8106043338775635
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.18533222377300262
+state: "observing"
+---
+header: 
+  seq: 2771
+  stamp: 
+    secs: 1780376587
+    nsecs: 855017185
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8226406574249268
+wrap_score: 0.8085842728614807
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.1841808706521988
+state: "observing"
+---
+header: 
+  seq: 2772
+  stamp: 
+    secs: 1780376587
+    nsecs: 988626956
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8292115926742554
+wrap_score: 0.7949938178062439
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.18104714155197144
+state: "observing"
+---
+header: 
+  seq: 2773
+  stamp: 
+    secs: 1780376588
+    nsecs:  54969549
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.836867094039917
+wrap_score: 0.7973665595054626
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.1801271289587021
+state: "observing"
+---
+header: 
+  seq: 2774
+  stamp: 
+    secs: 1780376588
+    nsecs: 190458059
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8442766666412354
+wrap_score: 0.8094191551208496
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.18070009350776672
+state: "observing"
+---
+header: 
+  seq: 2775
+  stamp: 
+    secs: 1780376588
+    nsecs: 254215478
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8356202840805054
+wrap_score: 0.8023264408111572
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.1810789257287979
+state: "observing"
+---
+header: 
+  seq: 2776
+  stamp: 
+    secs: 1780376588
+    nsecs: 388227701
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8475642204284668
+wrap_score: 0.8125306963920593
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.18061889708042145
+state: "observing"
+---
+header: 
+  seq: 2777
+  stamp: 
+    secs: 1780376588
+    nsecs: 453581333
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8393620252609253
+wrap_score: 0.8017505407333374
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.18036890029907227
+state: "observing"
+---
+header: 
+  seq: 2778
+  stamp: 
+    secs: 1780376588
+    nsecs: 520549297
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8401918411254883
+wrap_score: 0.8111015558242798
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.18163326382637024
+state: "observing"
+---
+header: 
+  seq: 2779
+  stamp: 
+    secs: 1780376588
+    nsecs: 659523725
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8389071226119995
+wrap_score: 0.8120611906051636
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.1819913238286972
+state: "observing"
+---
+header: 
+  seq: 2780
+  stamp: 
+    secs: 1780376588
+    nsecs: 720360040
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.844901204109192
+wrap_score: 0.8040043711662292
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.17978380620479584
+state: "observing"
+---
+header: 
+  seq: 2781
+  stamp: 
+    secs: 1780376588
+    nsecs: 855525970
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8356504440307617
+wrap_score: 0.8213574886322021
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.18392853438854218
+state: "observing"
+---
+header: 
+  seq: 2782
+  stamp: 
+    secs: 1780376588
+    nsecs: 921954154
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8335829973220825
+wrap_score: 0.8161618709564209
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.18349377810955048
+state: "observing"
+---
+header: 
+  seq: 2783
+  stamp: 
+    secs: 1780376589
+    nsecs:  54076910
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8401893377304077
+wrap_score: 0.8468672633171082
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.18699853122234344
+state: "observing"
+---
+header: 
+  seq: 2784
+  stamp: 
+    secs: 1780376589
+    nsecs: 120850801
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.841241717338562
+wrap_score: 0.823836088180542
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.18336845934391022
+state: "observing"
+---
+header: 
+  seq: 2785
+  stamp: 
+    secs: 1780376589
+    nsecs: 253987312
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8507829904556274
+wrap_score: 0.8195161819458008
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.18113026022911072
+state: "observing"
+---
+header: 
+  seq: 2786
+  stamp: 
+    secs: 1780376589
+    nsecs: 321156501
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8385857343673706
+wrap_score: 0.8310142755508423
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.1848878562450409
+state: "observing"
+---
+header: 
+  seq: 2787
+  stamp: 
+    secs: 1780376589
+    nsecs: 387366056
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.84896981716156
+wrap_score: 0.7937868237495422
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.1775730550289154
+state: "observing"
+---
+header: 
+  seq: 2788
+  stamp: 
+    secs: 1780376589
+    nsecs: 520984649
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8476451635360718
+wrap_score: 0.8156802654266357
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.18107785284519196
+state: "observing"
+---
+header: 
+  seq: 2789
+  stamp: 
+    secs: 1780376589
+    nsecs: 588629245
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8395295143127441
+wrap_score: 0.8235583901405334
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.1836121827363968
+state: "observing"
+---
+header: 
+  seq: 2790
+  stamp: 
+    secs: 1780376589
+    nsecs: 654695749
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8287818431854248
+wrap_score: 0.8288707733154297
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.1862003058195114
+state: "observing"
+---
+header: 
+  seq: 2791
+  stamp: 
+    secs: 1780376589
+    nsecs: 787005662
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8298336267471313
+wrap_score: 0.8298428058624268
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.1861708164215088
+state: "observing"
+---
+header: 
+  seq: 2792
+  stamp: 
+    secs: 1780376589
+    nsecs: 920898675
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.822130560874939
+wrap_score: 0.8202823996543884
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.1860205978155136
+state: "observing"
+---
+header: 
+  seq: 2793
+  stamp: 
+    secs: 1780376589
+    nsecs: 987805366
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.831979513168335
+wrap_score: 0.8124677538871765
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.18320690095424652
+state: "observing"
+---
+header: 
+  seq: 2794
+  stamp: 
+    secs: 1780376590
+    nsecs:  58975934
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8267796039581299
+wrap_score: 0.8166349530220032
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.1846986562013626
+state: "observing"
+---
+header: 
+  seq: 2795
+  stamp: 
+    secs: 1780376590
+    nsecs: 189904928
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8337916135787964
+wrap_score: 0.8144890069961548
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.18320809304714203
+state: "observing"
+---
+header: 
+  seq: 2796
+  stamp: 
+    secs: 1780376590
+    nsecs: 260990858
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.825330376625061
+wrap_score: 0.8220146894454956
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.18574713170528412
+state: "observing"
+---
+header: 
+  seq: 2797
+  stamp: 
+    secs: 1780376590
+    nsecs: 387669086
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8375365734100342
+wrap_score: 0.8279163837432861
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.18459802865982056
+state: "observing"
+---
+header: 
+  seq: 2798
+  stamp: 
+    secs: 1780376590
+    nsecs: 453570604
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8260247707366943
+wrap_score: 0.8343091011047363
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.18747557699680328
+state: "observing"
+---
+header: 
+  seq: 2799
+  stamp: 
+    secs: 1780376590
+    nsecs: 586960554
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8424283266067505
+wrap_score: 0.815604031085968
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.1819358915090561
+state: "observing"
+---
+header: 
+  seq: 2800
+  stamp: 
+    secs: 1780376590
+    nsecs: 654052019
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8445522785186768
+wrap_score: 0.8219920992851257
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.18254010379314423
+state: "observing"
+---
+header: 
+  seq: 2801
+  stamp: 
+    secs: 1780376590
+    nsecs: 787438869
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.839296579360962
+wrap_score: 0.8171385526657104
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.18268801271915436
+state: "observing"
+---
+header: 
+  seq: 2802
+  stamp: 
+    secs: 1780376590
+    nsecs: 854010820
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8185350894927979
+wrap_score: 0.8240861892700195
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.18719041347503662
+state: "observing"
+---
+header: 
+  seq: 2803
+  stamp: 
+    secs: 1780376590
+    nsecs: 920732021
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8283302783966064
+wrap_score: 0.8222503662109375
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.18528251349925995
+state: "observing"
+---
+header: 
+  seq: 2804
+  stamp: 
+    secs: 1780376591
+    nsecs:  56620836
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8285692930221558
+wrap_score: 0.8307175040245056
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.186512753367424
+state: "observing"
+---
+header: 
+  seq: 2805
+  stamp: 
+    secs: 1780376591
+    nsecs: 125250101
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8503353595733643
+wrap_score: 0.8139044046401978
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.18036310374736786
+state: "observing"
+---
+header: 
+  seq: 2806
+  stamp: 
+    secs: 1780376591
+    nsecs: 261802196
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8345487117767334
+wrap_score: 0.8486028909683228
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.1881989687681198
+state: "observing"
+---
+header: 
+  seq: 2807
+  stamp: 
+    secs: 1780376591
+    nsecs: 323211193
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.839551568031311
+wrap_score: 0.8157363533973694
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.18243519961833954
+state: "observing"
+---
+header: 
+  seq: 2808
+  stamp: 
+    secs: 1780376591
+    nsecs: 454479217
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.836228847503662
+wrap_score: 0.8374502062797546
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.18624606728553772
+state: "observing"
+---
+header: 
+  seq: 2809
+  stamp: 
+    secs: 1780376591
+    nsecs: 520921230
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.832153081893921
+wrap_score: 0.8443431854248047
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.18795929849147797
+state: "observing"
+---
+header: 
+  seq: 2810
+  stamp: 
+    secs: 1780376591
+    nsecs: 654043674
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8353551626205444
+wrap_score: 0.8501288890838623
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.1882934868335724
+state: "observing"
+---
+header: 
+  seq: 2811
+  stamp: 
+    secs: 1780376591
+    nsecs: 722691059
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8345049619674683
+wrap_score: 0.8359907865524292
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.1863144487142563
+state: "observing"
+---
+header: 
+  seq: 2812
+  stamp: 
+    secs: 1780376591
+    nsecs: 854416131
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8328434228897095
+wrap_score: 0.8502110242843628
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.18872441351413727
+state: "observing"
+---
+header: 
+  seq: 2813
+  stamp: 
+    secs: 1780376591
+    nsecs: 920352220
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8369932174682617
+wrap_score: 0.8351427912712097
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.18577255308628082
+state: "observing"
+---
+header: 
+  seq: 2814
+  stamp: 
+    secs: 1780376591
+    nsecs: 987242937
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8348804712295532
+wrap_score: 0.8187771439552307
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.1836698204278946
+state: "observing"
+---
+header: 
+  seq: 2815
+  stamp: 
+    secs: 1780376592
+    nsecs: 120685577
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8136013746261597
+wrap_score: 0.827362060546875
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.18850408494472504
+state: "observing"
+---
+header: 
+  seq: 2816
+  stamp: 
+    secs: 1780376592
+    nsecs: 186912298
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8103365898132324
+wrap_score: 0.8381867408752441
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.1906719207763672
+state: "observing"
+---
+header: 
+  seq: 2817
+  stamp: 
+    secs: 1780376592
+    nsecs: 324744224
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.809802532196045
+wrap_score: 0.8298037648200989
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.189503476023674
+state: "observing"
+---
+header: 
+  seq: 2818
+  stamp: 
+    secs: 1780376592
+    nsecs: 387912273
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8330373764038086
+wrap_score: 0.8319112658500671
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.18594713509082794
+state: "observing"
+---
+header: 
+  seq: 2819
+  stamp: 
+    secs: 1780376592
+    nsecs: 520560979
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8287928104400635
+wrap_score: 0.8371690511703491
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.18744322657585144
+state: "observing"
+---
+header: 
+  seq: 2820
+  stamp: 
+    secs: 1780376592
+    nsecs: 586979150
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8194084167480469
+wrap_score: 0.8497582674026489
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.1908956617116928
+state: "observing"
+---
+header: 
+  seq: 2821
+  stamp: 
+    secs: 1780376592
+    nsecs: 723601818
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8148823976516724
+wrap_score: 0.8658313751220703
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.19406096637248993
+state: "observing"
+---
+header: 
+  seq: 2822
+  stamp: 
+    secs: 1780376592
+    nsecs: 787307500
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8270920515060425
+wrap_score: 0.83879154920578
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.18797005712985992
+state: "observing"
+---
+header: 
+  seq: 2823
+  stamp: 
+    secs: 1780376592
+    nsecs: 921022415
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8215994834899902
+wrap_score: 0.838764488697052
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.18888142704963684
+state: "observing"
+---
+header: 
+  seq: 2824
+  stamp: 
+    secs: 1780376592
+    nsecs: 987531185
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8143305778503418
+wrap_score: 0.8482250571250916
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.19151198863983154
+state: "observing"
+---
+header: 
+  seq: 2825
+  stamp: 
+    secs: 1780376593
+    nsecs:  53849458
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.813320279121399
+wrap_score: 0.8394439220428467
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.19036321341991425
+state: "observing"
+---
+header: 
+  seq: 2826
+  stamp: 
+    secs: 1780376593
+    nsecs: 187156677
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8188109397888184
+wrap_score: 0.8332307934761047
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.18851613998413086
+state: "observing"
+---
+header: 
+  seq: 2827
+  stamp: 
+    secs: 1780376593
+    nsecs: 255435228
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8352454900741577
+wrap_score: 0.8244220614433289
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.1844557225704193
+state: "observing"
+---
+header: 
+  seq: 2828
+  stamp: 
+    secs: 1780376593
+    nsecs: 320730209
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.85100257396698
+wrap_score: 0.835632860660553
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.1835111677646637
+state: "observing"
+---
+header: 
+  seq: 2829
+  stamp: 
+    secs: 1780376593
+    nsecs: 453747272
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8483760356903076
+wrap_score: 0.8190903663635254
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.18146753311157227
+state: "observing"
+---
+header: 
+  seq: 2830
+  stamp: 
+    secs: 1780376593
+    nsecs: 520253181
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8587098121643066
+wrap_score: 0.8338767290115356
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.18196320533752441
+state: "observing"
+---
+header: 
+  seq: 2831
+  stamp: 
+    secs: 1780376593
+    nsecs: 654656887
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8708338737487793
+wrap_score: 0.8350973725318909
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.1801256239414215
+state: "observing"
+---
+header: 
+  seq: 2832
+  stamp: 
+    secs: 1780376593
+    nsecs: 722045660
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8638310432434082
+wrap_score: 0.8455727100372314
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.18286405503749847
+state: "observing"
+---
+header: 
+  seq: 2833
+  stamp: 
+    secs: 1780376593
+    nsecs: 854185581
+  frame_id: "robot_camera"
+smaller_track_id: "track_143"
+larger_track_id: "track_144"
+torso_distance_norm: 1.8644170761108398
+wrap_score: 0.8241669535636902
+lift_score: 0.0
+feet_off_ground_score: 0.0
+limb_speed_score: 0.0
+limb_accel_score: 0.0
+co_motion_score: 0.0
+suspicion_score: 0.17955553531646729
+state: "observing"
+---

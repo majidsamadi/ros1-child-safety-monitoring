@@ -21,9 +21,23 @@ class InteractionAnalyzerNode:
         self.tracked_topic = rospy.get_param('~tracked_pose_topic', '/poses/tracked')
         self.features_topic = rospy.get_param('~features_topic', '/interaction/features')
         self.history_len = int(rospy.get_param('~history_len', 8))
+        self.lift_start_norm = float(rospy.get_param('~lift_start_norm', 0.03))
+        self.lift_full_norm = float(rospy.get_param('~lift_full_norm', 0.18))
+        self.lift_hold_seconds = float(rospy.get_param('~lift_hold_seconds', 1.50))
+        self.lift_hold_min_score = float(rospy.get_param('~lift_hold_min_score', 0.25))
+        self.struggle_hold_seconds = float(rospy.get_param('~struggle_hold_seconds', 1.00))
+        self.struggle_hold_min_score = float(rospy.get_param('~struggle_hold_min_score', 0.30))
+        self.min_visible_keypoints = int(rospy.get_param('~min_visible_keypoints', 9))
+        self.min_torso_keypoints = int(rospy.get_param('~min_torso_keypoints', 3))
+        self.min_bbox_height = float(rospy.get_param('~min_bbox_height', 120.0))
+        self.min_bbox_width = float(rospy.get_param('~min_bbox_width', 45.0))
         self.feet_requires_lift_score = float(rospy.get_param('~feet_requires_lift_score', 0.20))
         self.feet_without_lift_cap = float(rospy.get_param('~feet_without_lift_cap', 0.15))
         self.hist = defaultdict(lambda: deque(maxlen=self.history_len))
+        self.lift_hold_until = {}
+        self.lift_hold_score = {}
+        self.struggle_hold_until = {}
+        self.struggle_hold_score = {}
         self.pub = rospy.Publisher(self.features_topic, InteractionFeatures, queue_size=5)
         self.sub = rospy.Subscriber(self.tracked_topic, PersonPose2DArray, self.on_tracked, queue_size=5)
 
@@ -61,14 +75,59 @@ class InteractionAnalyzerNode:
         return max(scores) if scores else 0.0
 
     def _lift_score(self, child: PersonPose2D) -> float:
-        center = self._torso_center(child)
-        h = self.hist[child.track_id]
-        h.append(center)
-        if len(h) < 3:
-            return 0.0
-        dy = h[0][1] - h[-1][1]  # image y decreases when moving upward
-        norm = dy / max(float(child.bbox_height), 1.0)
-        return score_forward(norm, 0.08, 0.35)
+        """
+        Robust lift cue.
+
+        The old version only used torso-center upward motion over a short history.
+        In real robot-camera testing, the child track can partially occlude or jump
+        during a lift. This version uses both torso center and bounding-box center,
+        then holds recent lift evidence briefly so the signal is not lost instantly.
+        """
+        torso_center = self._torso_center(child)
+        bbox_center = self._bbox_center(child)
+
+        torso_key = child.track_id + '_lift_torso'
+        bbox_key = child.track_id + '_lift_bbox'
+
+        torso_hist = self.hist[torso_key]
+        bbox_hist = self.hist[bbox_key]
+
+        torso_hist.append(torso_center)
+        bbox_hist.append(bbox_center)
+
+        def best_upward_norm(history):
+            pts = list(history)
+            if len(pts) < 2:
+                return 0.0
+
+            best_upward_pixels = 0.0
+            for i in range(len(pts)):
+                for j in range(i + 1, len(pts)):
+                    # image y decreases when moving upward
+                    upward_pixels = pts[i][1] - pts[j][1]
+                    if upward_pixels > best_upward_pixels:
+                        best_upward_pixels = upward_pixels
+
+            return best_upward_pixels / max(float(child.bbox_height), 1.0)
+
+        torso_norm = best_upward_norm(torso_hist)
+        bbox_norm = best_upward_norm(bbox_hist)
+        lift_norm = max(torso_norm, bbox_norm)
+
+        raw_score = score_forward(lift_norm, self.lift_start_norm, self.lift_full_norm)
+
+        now = rospy.Time.now().to_sec()
+        track_id = child.track_id
+
+        if raw_score >= self.lift_hold_min_score:
+            self.lift_hold_until[track_id] = now + self.lift_hold_seconds
+            self.lift_hold_score[track_id] = max(raw_score, self.lift_hold_score.get(track_id, 0.0))
+
+        if now <= self.lift_hold_until.get(track_id, 0.0):
+            return max(raw_score, self.lift_hold_score.get(track_id, 0.0))
+
+        self.lift_hold_score[track_id] = raw_score
+        return raw_score
 
     def _feet_score(self, child: PersonPose2D, lift: float) -> float:
         la = self._point(child, LEFT_ANKLE)
@@ -102,14 +161,55 @@ class InteractionAnalyzerNode:
         accel = abs(distance(h[-1], h[-2]) - distance(h[-2], h[-3])) / max(float(child.bbox_height), 1.0)
         return score_forward(move, 0.03, 0.20), score_forward(accel, 0.03, 0.25)
 
+    def _visible_count(self, p: PersonPose2D) -> int:
+        return sum(1 for v in p.visible if v)
+
+    def _visible_torso_count(self, p: PersonPose2D) -> int:
+        return sum(
+            1
+            for idx in [LEFT_SHOULDER, RIGHT_SHOULDER, LEFT_HIP, RIGHT_HIP]
+            if self._point(p, idx) is not None
+        )
+
+    def _is_usable_person(self, p: PersonPose2D) -> bool:
+        # Ignore partial bodies / noisy detections.
+        # This prevents one half-visible person from being treated as two people.
+        if p.bbox_width < self.min_bbox_width:
+            return False
+        if p.bbox_height < self.min_bbox_height:
+            return False
+        if self._visible_count(p) < self.min_visible_keypoints:
+            return False
+        if self._visible_torso_count(p) < self.min_torso_keypoints:
+            return False
+        return True
+
+    def _relative_lift_score(self, child: PersonPose2D, adult: PersonPose2D) -> float:
+        """
+        Lift cue based on child body height relative to the adult.
+
+        If the child is lifted, the bottom of the child bounding box rises above
+        the adult's lower body / floor level. This helps when the short-term
+        vertical-motion cue is lost because of tracking jumps or occlusion.
+        """
+        child_bottom = float(child.bbox_y + child.bbox_height)
+        adult_bottom = float(adult.bbox_y + adult.bbox_height)
+
+        clearance_norm = (adult_bottom - child_bottom) / max(float(child.bbox_height), 1.0)
+
+        # 0.10 = small vertical clearance, 0.45 = strong off-ground cue.
+        return score_forward(clearance_norm, 0.10, 0.45)
+
     def on_tracked(self, msg: PersonPose2DArray):
-        if len(msg.poses) < 2:
+        usable_poses = [p for p in msg.poses if self._is_usable_person(p)]
+
+        if len(usable_poses) < 2:
             return
 
-        child = next((p for p in msg.poses if p.size_role == 'smaller_candidate'), None)
-        adult = next((p for p in msg.poses if p.size_role == 'larger_candidate'), None)
+        child = next((p for p in usable_poses if p.size_role == 'smaller_candidate'), None)
+        adult = next((p for p in usable_poses if p.size_role == 'larger_candidate'), None)
         if child is None or adult is None:
-            sorted_poses = sorted(msg.poses, key=lambda p: p.bbox_height)
+            sorted_poses = sorted(usable_poses, key=lambda p: p.bbox_height)
             child, adult = sorted_poses[0], sorted_poses[-1]
 
         child_center = self._torso_center(child)
@@ -117,9 +217,36 @@ class InteractionAnalyzerNode:
         dist_norm = distance(child_center, adult_center) / self._scale(child)
         contact = score_inverse(dist_norm, 1.0, 2.2)
         wrap = self._wrap_score(child, adult)
-        lift = self._lift_score(child)
+        motion_lift = self._lift_score(child)
+        relative_lift = self._relative_lift_score(child, adult)
+        lift = max(motion_lift, relative_lift)
         feet = self._feet_score(child, lift)
         limb_speed, limb_accel = self._limb_motion(child)
+
+        # Reduce false lift detection during calm close/hug scenes.
+        # If feet are not off-ground and there is no strong motion,
+        # do not trust a high lift score caused by noisy keypoints.
+        if relative_lift < 0.40 and feet < 0.30 and limb_speed < 0.25 and limb_accel < 0.25:
+            lift = min(lift, 0.15)
+            feet = self._feet_score(child, lift)
+
+        # Hold short struggle spikes briefly so rapid limb motion is not lost
+        # between frames. This helps the final CRITICAL decision see a continuous
+        # lift + struggle pattern instead of isolated one-frame spikes.
+        raw_struggle = max(limb_speed, limb_accel)
+        now_sec = rospy.Time.now().to_sec()
+        if raw_struggle >= self.struggle_hold_min_score:
+            self.struggle_hold_until[child.track_id] = now_sec + self.struggle_hold_seconds
+            self.struggle_hold_score[child.track_id] = max(
+                raw_struggle,
+                self.struggle_hold_score.get(child.track_id, 0.0)
+            )
+
+        if now_sec <= self.struggle_hold_until.get(child.track_id, 0.0):
+            held = self.struggle_hold_score.get(child.track_id, raw_struggle)
+            limb_speed = max(limb_speed, held)
+            limb_accel = max(limb_accel, held)
+
         struggle = max(limb_speed, limb_accel)
         comotion = 0.0
         score = weighted_score(contact, wrap, lift, feet, struggle, comotion)

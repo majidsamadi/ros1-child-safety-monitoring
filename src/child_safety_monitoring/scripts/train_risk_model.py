@@ -20,33 +20,25 @@ FEATURE_NAMES = [
 ]
 
 LABEL_MAP = {
-    # normal / negative examples
-    'normal': 'normal',
-    'normal_far': 'normal',
-    'normal_close': 'normal',
-    'normal_hug': 'normal',
-    'normal_play': 'normal',
-    'normal_walk': 'normal',
-    'standing': 'normal',
-    'walking': 'normal',
-    'hug': 'normal',
+    # Normal / safe classes
+    "normal": "normal",
+    "normal_empty": "normal",
+    "normal_one_person": "normal",
+    "normal_far": "normal",
+    "normal_close": "normal",
+    "normal_hug": "normal",
+    "normal_hug_safe": "normal",
 
-    # early suspicious / warning examples
-    'warning': 'warning',
-    'near': 'warning',
-    'near_suspicious': 'warning',
-    'suspicious_contact': 'warning',
-    'approach_fast': 'warning',
-    'arms_near': 'warning',
+    # Warning / near suspicious classes
+    "warning": "warning",
+    "near_suspicious": "warning",
+    "near_suspicious_safe": "warning",
 
-    # high risk examples
-    'high': 'high',
-    'high_suspicious': 'high',
-    'critical': 'high',
-    'critical_risk': 'high',
-    'critical_like': 'high',
-    'lift_like': 'high',
-    'struggle_like': 'high',
+    # High suspicious classes
+    "high": "high",
+    "high_suspicious": "high",
+    "high_suspicious_safe": "high",
+    "critical_high_suspicious": "high",
 }
 
 

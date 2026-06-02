@@ -194,6 +194,34 @@ class AIDecisionNode:
                     or p_risk >= self.near_probability_threshold
                 )
             )
+        # Direct NEAR rule tuned from real Jupiter robot camera data.
+        # This treats the best real near-suspicious position as NEAR:
+        # close/arms-near, no lift, no struggle.
+        if f is not None and not near_candidate:
+            near_direct_close_wrap = (
+                feature_score >= 0.18
+                and f.torso_distance_norm <= 1.90
+                and f.wrap_score >= 0.75
+                and f.lift_score < 0.30
+                and max(f.limb_speed_score, f.limb_accel_score) < 0.50
+            )
+            if near_direct_close_wrap:
+                near_candidate = True
+            # Model-supported NEAR rule from real robot camera behavior.
+            # In the real near_suspicious_safe pose, the RF model can strongly say high,
+            # while lift and struggle are still zero. In that case we downgrade it to NEAR.
+            near_model_close_wrap = (
+                p_high >= 0.90
+                and f.torso_distance_norm <= 2.30
+                and f.wrap_score >= 0.45
+                and f.lift_score < 0.30
+                and max(f.limb_speed_score, f.limb_accel_score) < 0.50
+            )
+
+            if near_model_close_wrap:
+                near_candidate = True
+
+
         high_by_probability = p_high >= self.high_probability_threshold and feature_score >= self.high_feature_score_threshold
         high_by_evidence = (
             fresh
@@ -204,14 +232,38 @@ class AIDecisionNode:
         high_candidate = high_by_probability or high_by_evidence
 
         # CRITICAL is very strong live evidence. This is a risk alert, not proof of kidnapping.
-        critical_by_probability = p_high >= self.critical_probability_threshold and feature_score >= self.critical_feature_score_threshold
+        # IMPORTANT: CRITICAL must require actual lift evidence.
+        # The Random Forest has only normal/warning/high classes, so p_high alone
+        # must not create a critical alert.
         critical_by_evidence = (
             fresh
             and feature_score >= self.critical_feature_score_threshold
             and lift >= self.critical_lift_threshold
             and (limb_speed >= self.critical_limb_threshold or limb_accel >= self.critical_accel_threshold)
         )
-        critical_candidate = critical_by_probability or critical_by_evidence
+        critical_candidate = critical_by_evidence
+
+        # Direct CRITICAL rule tuned from real Jupiter robot camera data.
+        # CRITICAL has priority over NEAR/HIGH and must include lift evidence.
+        if f is not None:
+            critical_direct_lift_struggle = (
+                feature_score >= 0.65
+                and f.torso_distance_norm <= 0.90
+                and f.wrap_score >= 0.70
+                and f.lift_score >= 0.55
+                and max(f.limb_speed_score, f.limb_accel_score) >= 0.60
+            )
+            critical_model_lift_struggle = (
+                p_high >= 0.75
+                and f.torso_distance_norm <= 2.80
+                and f.wrap_score >= 0.85
+                and lift >= 0.40
+                and max(f.limb_speed_score, f.limb_accel_score) >= 0.45
+            )
+            if critical_direct_lift_struggle or critical_model_lift_struggle:
+                critical_candidate = True
+                high_candidate = False
+                near_candidate = False
 
         if near_candidate:
             if self.near_since is None:

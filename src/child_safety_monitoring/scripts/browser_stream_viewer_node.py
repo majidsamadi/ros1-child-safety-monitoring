@@ -14,6 +14,7 @@ from sensor_msgs.msg import Image
 
 latest_jpeg: Optional[bytes] = None
 latest_stamp = 0.0
+primary_image_seen = False
 bridge = CvBridge()
 
 
@@ -44,16 +45,32 @@ def get_robot_ips() -> List[str]:
     return ips or ["127.0.0.1"]
 
 
-def image_callback(msg: Image) -> None:
-    global latest_jpeg, latest_stamp
+def _store_image(msg: Image, is_primary: bool) -> None:
+    global latest_jpeg, latest_stamp, primary_image_seen
+
+    # If the YOLO overlay has started arriving, never let the raw fallback
+    # overwrite it. This prevents raw/overlay frame alternation in the browser.
+    if not is_primary and primary_image_seen:
+        return
+
     try:
         img = bridge.imgmsg_to_cv2(msg, desired_encoding="bgr8")
         ok, jpg = cv2.imencode(".jpg", img, [int(cv2.IMWRITE_JPEG_QUALITY), int(rospy.get_param("~jpeg_quality", 80))])
         if ok:
             latest_jpeg = jpg.tobytes()
             latest_stamp = time.time()
+            if is_primary:
+                primary_image_seen = True
     except Exception as exc:
         rospy.logwarn("Browser viewer image conversion failed: %s", exc)
+
+
+def primary_image_callback(msg: Image) -> None:
+    _store_image(msg, is_primary=True)
+
+
+def fallback_image_callback(msg: Image) -> None:
+    _store_image(msg, is_primary=False)
 
 
 class ViewerHandler(BaseHTTPRequestHandler):
@@ -108,7 +125,7 @@ def main() -> None:
     host = str(rospy.get_param("~host", "0.0.0.0"))
     fallback_after_seconds = float(rospy.get_param("~fallback_after_seconds", 8.0))
 
-    rospy.Subscriber(image_topic, Image, image_callback, queue_size=1, buff_size=2**24)
+    rospy.Subscriber(image_topic, Image, primary_image_callback, queue_size=1, buff_size=2**24)
     rospy.loginfo("Browser viewer subscribing to %s", image_topic)
 
     server = ThreadingHTTPServer((host, port), ViewerHandler)
@@ -120,9 +137,9 @@ def main() -> None:
 
     # Start optional fallback subscriber if overlay does not arrive.
     def maybe_fallback(_event):
-        if latest_jpeg is None and fallback_topic and fallback_topic != image_topic:
+        if not primary_image_seen and latest_jpeg is None and fallback_topic and fallback_topic != image_topic:
             rospy.logwarn("No image received on %s yet. Also subscribing to fallback topic %s", image_topic, fallback_topic)
-            rospy.Subscriber(fallback_topic, Image, image_callback, queue_size=1, buff_size=2**24)
+            rospy.Subscriber(fallback_topic, Image, fallback_image_callback, queue_size=1, buff_size=2**24)
             maybe_timer.shutdown()
 
     maybe_timer = rospy.Timer(rospy.Duration(fallback_after_seconds), maybe_fallback, oneshot=True)
